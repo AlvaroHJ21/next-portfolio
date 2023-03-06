@@ -69,7 +69,7 @@ export default function Hero() {
                         </a>
                     </RevealWrapper>
                     <RevealWrapper origin='bottom'>
-                        <button className={styles.cta}>Échale un vistazo a mi CV</button>
+                        <a href="https://astro-cv-nine.vercel.app/" target="_blank" className={styles.cta}>Échale un vistazo a mi CV</a>
                     </RevealWrapper>
                 </div>
                 <RevealWrapper className={styles.image} origin="rigth" delay={100} duration={1000}>
