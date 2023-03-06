@@ -3,7 +3,7 @@ import Hero from '../components/ui/hero/Hero';
 
 export default function Home() {
   return (
-      <Layout title="Home">
+      <Layout title="AlvaroHJ">
           <Hero />
       </Layout>
   );

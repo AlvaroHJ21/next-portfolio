@@ -10,6 +10,7 @@ export default function Navbar() {
         <header className={styles.header}>
             <div className={styles.container}>
                 <a href="" className={styles.logo}>
+                    {/* <img src="logo.png" alt="" /> */}
                     Alvaro<span>HJ</span>
                 </a>
                 <AiOutlineMenu onClick={handleClickMenu} className={styles.menuIcon} size={24} />
