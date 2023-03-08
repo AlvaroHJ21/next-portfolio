@@ -3,7 +3,7 @@ import Navbar from '../ui/navbar/Navbar';
 
 interface Props {
     title?: string;
-    children: JSX.Element;
+    children: React.ReactNode;
 }
 
 export default function Layout({ title = 'Portafolio', children }: Props) {

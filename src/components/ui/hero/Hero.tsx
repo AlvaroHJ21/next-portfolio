@@ -3,6 +3,7 @@ import { AiFillTwitterCircle, AiFillLinkedin, AiFillYoutube, AiFillGithub } from
 import Typed from 'typed.js';
 import { RevealWrapper } from 'next-reveal';
 import styles from './Hero.module.css';
+import Section from '@/components/layouts/Section';
 
 export default function Hero() {
     const typed = useRef<Typed>();
@@ -10,7 +11,7 @@ export default function Hero() {
     useEffect(() => {
         if (document.querySelector('.text')) {
             typed.current = new Typed('.text', {
-                strings: ['Desarrollador Frontend', 'Desarrollador Backend', 'Desarrollador Móvil'],
+                strings: ['Frontend', 'Backend', 'Móvil'],
                 typeSpeed: 100,
                 backSpeed: 100,
                 backDelay: 1000,
@@ -23,14 +24,14 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className={styles.hero}>
-            <div className={styles.container}>
+        <Section id="home" >
+            <div className={styles.content}>
                 <div className={styles.info}>
                     <RevealWrapper className={styles.texts}>
                         <h3>Hola, soy</h3>
                         <h1>Alvaro Huaysara</h1>
                         <h3>
-                            Y soy <span className="text">Desarrollador Frontend</span>
+                            Y soy <span>Desarrollador</span> <span className="text">Frontend</span>
                         </h3>
                         <p>
                             Lorem ipsum dolor sit amet consectetur it amet consectetur it amet
@@ -68,14 +69,20 @@ export default function Hero() {
                             <AiFillGithub size={32} />
                         </a>
                     </RevealWrapper>
-                    <RevealWrapper origin='bottom'>
-                        <a href="https://astro-cv-nine.vercel.app/" target="_blank" className={styles.cta}>Échale un vistazo a mi CV</a>
+                    <RevealWrapper origin="bottom">
+                        <a
+                            href="https://astro-cv-nine.vercel.app/"
+                            target="_blank"
+                            className={styles.cta}
+                        >
+                            Échale un vistazo a mi CV
+                        </a>
                     </RevealWrapper>
                 </div>
                 <RevealWrapper className={styles.image} origin="rigth" delay={100} duration={1000}>
                     <img src="/img/perfil.png" alt="perfil" />
                 </RevealWrapper>
             </div>
-        </section>
+        </Section>
     );
 }

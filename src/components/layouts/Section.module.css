@@ -1,0 +1,31 @@
+.section{
+    overflow: hidden;
+    padding-top: 6.4rem;
+}
+
+.container{
+    width: 90%;
+    max-width: 110rem;
+    margin: 0 auto;
+    min-height: calc(100vh - 6.4rem) ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title{
+    text-transform: uppercase;
+    margin: 0 auto;
+    width: fit-content;
+    color: #09959f;
+    font-size: 3.2rem;
+    margin-bottom: 2rem;
+}
+
+.title::after{
+    content: '';
+    display: block;
+    height: .4rem;
+    width: 100%;
+    background-color: #09959f;
+}
