@@ -21,6 +21,7 @@
 .content .buttons{
     display: flex;
     gap: 1rem;
+    margin-bottom: 4rem;
 }
 
 .content .buttons button {
@@ -33,4 +34,21 @@
 
 .content .buttons button.active{
     background-color: #09959f;
+}
+
+.cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+.cards .row{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.cards .row div{
+    flex: 1;
 }

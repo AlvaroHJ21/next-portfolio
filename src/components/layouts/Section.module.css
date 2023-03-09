@@ -8,6 +8,7 @@
     max-width: 110rem;
     margin: 0 auto;
     min-height: calc(100vh - 6.4rem) ;
+    /* padding: 4rem 0; */
     display: flex;
     flex-direction: column;
     justify-content: center;

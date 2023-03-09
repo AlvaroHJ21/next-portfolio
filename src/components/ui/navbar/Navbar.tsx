@@ -14,7 +14,9 @@ export default function Navbar() {
     return (
         <>
             {' '}
-            <header className={styles.header}>
+            <header className={styles.header} style={{
+                backgroundColor: 'var(--foreground)'
+            }}>
                 <div className={styles.container}>
                     <a href="/" className={styles.logo}>
                         Alvaro<span>HJ</span>

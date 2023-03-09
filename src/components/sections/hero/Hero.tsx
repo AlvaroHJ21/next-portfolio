@@ -24,7 +24,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <Section id="home" >
+        <Section id="home">
             <div className={styles.content}>
                 <div className={styles.info}>
                     <RevealWrapper className={styles.texts}>
@@ -34,8 +34,9 @@ export default function Hero() {
                             Y soy <span>Desarrollador</span> <span className="text">Frontend</span>
                         </h3>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur it amet consectetur it amet
-                            consectetur adipisicing elit. Quia sapiente in nam consectetur!
+                            Apasionado por crear soluciones tecnológicas innovadoras y eficientes
+                            para mejorar la experiencia del usuario. ¡Explora mi portafolio y contáctame para hablar
+                            sobre tus proyectos!
                         </p>
                     </RevealWrapper>
 
@@ -79,7 +80,7 @@ export default function Hero() {
                         </a>
                     </RevealWrapper>
                 </div>
-                <RevealWrapper className={styles.image} origin="rigth" delay={100} duration={1000}>
+                <RevealWrapper className={styles.image} origin="bottom" delay={100} duration={1000}>
                     <img src="/img/perfil.png" alt="perfil" />
                 </RevealWrapper>
             </div>

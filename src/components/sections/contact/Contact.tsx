@@ -6,7 +6,7 @@ export default function Contact() {
     return (
         <Section id="contact">
             <div className={styles.content}>
-                <RevealWrapper reset>
+                <RevealWrapper reset >
                     <h2 className={styles.title}>Contáctame</h2>
                 </RevealWrapper>
                 <div>

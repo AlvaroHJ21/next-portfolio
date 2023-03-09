@@ -116,6 +116,7 @@
     overflow: hidden;
     background-color: #09959f;
     border-radius: 2rem;
+    /* box-shadow: 2px 2px 16px 0px #09959fb7; */
 }
 
 @media screen and (min-width: 599px) {
@@ -131,4 +132,10 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform .3s ease;
+}
+
+.image img:hover{
+    transform: scale(1.1);
+
 }

@@ -3,15 +3,15 @@
   --border-radius: 12px;
   --font-raleway: 'Raleway', sans-serif;
 
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
+  --foreground: #13111c2f;
+  --foreground-opacity: #1816221e; 
   --color-primary: #09959f
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 2, 11, 24;
+    --foreground: #13111C;
+    --foreground-opacity: #181622; 
   }
 }
 
@@ -36,7 +36,7 @@ body {
   font-family: var(--font-raleway);
   font-size: 1.6rem;
   color: rgb(var(--foreground-rgb));
-  background-color: rgb(var(--background-start-rgb));
+  background-color: var(--foreground);
 }
 
 a {

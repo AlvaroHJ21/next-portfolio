@@ -13,7 +13,7 @@ export default function Section({
         <section
             id={id}
             className={styles.section}
-            style={{ backgroundColor: backgroundColor ?? '#020b18' }}
+            style={{ backgroundColor: backgroundColor ?? 'var(--foreground)' }}
         >
             <div className={styles.container}>
                 {children}
