@@ -1,4 +1,7 @@
-:root {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-raleway: 'Raleway', sans-serif;
@@ -53,4 +56,4 @@ img{
   html {
     color-scheme: dark;
   }
-}
+} */
