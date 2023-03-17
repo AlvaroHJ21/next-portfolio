@@ -12,7 +12,7 @@ export default function Document() {
                     rel="stylesheet"
                 />
             </Head>
-            <body className='font-raleway bg-azul-marino-oscuro'>
+            <body className='font-raleway bg-background'>
                 <Main />
                 <NextScript />
             </body>

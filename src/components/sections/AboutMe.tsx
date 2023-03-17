@@ -5,13 +5,13 @@ import Button from "@/components/ui/Button";
 export default function AboutMe() {
   return (
     <Section id="about-us">
-      <div className="flex flex-col justify-center items-center h-screen gap-4 min-[1000px]:flex-row">
+      <div className="flex flex-col items-center justify-center h-screen gap-4 md:flex-row">
         
-        <div className="min-[1000px]:flex-1 flex justify-center">
+        <div className="flex justify-center md:flex-1">
           <div className="relative flex justify-center w-fit">
-            <div className="z-10 absolute top-2 left-2 w-full h-full rounded-full rotate-[30deg] bg-azul-verdoso"></div>
+            <div className="z-10 absolute top-2 left-2 w-full h-full rounded-full rotate-[30deg] bg-main"></div>
 
-            <div className="relative z-20 max-w-[220px] min-[1000px]:max-w-[320px]">
+            <div className="relative z-20 max-w-[220px] md:max-w-[320px]">
               <img
                 className="object-cover max-w-full"
                 src="/img/perfil-real.png"
@@ -22,12 +22,12 @@ export default function AboutMe() {
         </div>
         
         <div className="">
-          <div className="flex flex-col items-center gap-4 min-[1000px]:items-end">
+          <div className="flex flex-col items-center gap-4 md:items-end">
             <h2 className="font-black uppercase text-32">
-              Sobre <span className="text-azul-verdoso">mí</span>
+              Sobre <span className="text-main">mí</span>
             </h2>
 
-            <p className="text-center min-[1000px]:text-right max-w-lg">
+            <p className="max-w-md text-center md:text-right">
               ¡Hola! Soy un desarrollador web con experiencia en frontend,
               backend y desarrollo móvil. Me apasiona crear soluciones
               tecnológicas innovadoras y eficientes para mejorar la experiencia

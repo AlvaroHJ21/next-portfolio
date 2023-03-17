@@ -15,10 +15,10 @@ export default function Button({
 }: Props) {
   return (
     <button
-      className={`flex items-center gap-2 px-4 py-2 font-bold rounded-full border-2 ${
+      className={`flex items-center justify-center gap-2 px-4 py-2 font-bold rounded-full border-2 ${
         variant === "filled"
-          ? "bg-azul-verdoso border-transparent"
-          : "border-azul-verdoso bg-transparent"
+          ? "bg-main border-transparent"
+          : "border-main bg-transparent"
       }`}
     >
       {prefixIcon}

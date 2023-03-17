@@ -104,7 +104,7 @@ export default function Skills() {
     <Section id="skills">
       <div className="flex flex-col items-center justify-center min-h-screen gap-8 pt-16 item-center">
         <h2 className="font-black uppercase text-32">
-          Mis <span className="text-azul-verdoso">habilidades</span>
+          Mis <span className="text-main">habilidades</span>
         </h2>
         <div className="flex flex-col w-full gap-8 md:grid md:grid-cols-2 md:grid-rows-2 md:grid-flow-col">
           {skills.map((skill, index) => (
@@ -112,19 +112,27 @@ export default function Skills() {
               <h3 className="mb-4 font-black text-center text-20">
                 {skill.category}
               </h3>
-              {skill.skills.map((skill, index) => (
-                <div className="flex justify-between" key={index}>
-                  <p>{skill.name}</p>
-                  <div className="flex gap-2">
-                    {[...Array(skill.rating)].map((i, index) => (
-                      <div key={index} className="w-4 h-4 border-2 rounded-full bg-azul-verdoso border-azul-verdoso"></div>
-                    ))}
-                    {[...Array(5 - skill.rating)].map((i, index) => (
-                      <div key={index} className="w-4 h-4 bg-transparent border-2 rounded-full border-azul-verdoso"></div>
-                    ))}
+              <div className="flex flex-col gap-2">
+                {skill.skills.map((skill, index) => (
+                  <div className="flex justify-between" key={index}>
+                    <p>{skill.name}</p>
+                    <div className="flex gap-2">
+                      {[...Array(skill.rating)].map((i, index) => (
+                        <div
+                          key={index}
+                          className="w-4 h-4 border-2 rounded-full bg-main border-main"
+                        ></div>
+                      ))}
+                      {[...Array(5 - skill.rating)].map((i, index) => (
+                        <div
+                          key={index}
+                          className="w-4 h-4 bg-transparent border-2 rounded-full border-main"
+                        ></div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           ))}
         </div>

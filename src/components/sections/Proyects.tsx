@@ -60,9 +60,9 @@ export default function Proyects() {
   return (
     <Section id="proyects">
       <div className="pt-16">
-        <div className="flex flex-col items-center gap-5">
+        <div className="flex flex-col items-center gap-8">
           <h2 className="font-black uppercase text-32">
-            Mis <span className="text-azul-verdoso">proyectos</span>
+            Mis <span className="text-main">proyectos</span>
           </h2>
           <div className="flex gap-2">
             <Button text="Frontend" variant="outline" />
@@ -73,12 +73,12 @@ export default function Proyects() {
             {proyects.map((proyect) => (
               <div key={proyect.id} className="flex flex-col gap-4 md:gap-8 md:flex-row md:items-center">
                 <div>
-                  <img src={proyect.image} alt={proyect.title} />
+                  <img src={proyect.image} alt={proyect.title} className="transition-transform cursor-pointer hover:scale-105" />
                 </div>
                 <div className="flex flex-col gap-4 md:justify-center">
-                  <h3 className="text-32">{proyect.title}</h3>
+                  <h3 className="text-20">{proyect.title}</h3>
                   <p>{proyect.description}</p>
-                  <div className="h-1 m-auto w-36 bg-azul-verdoso"></div>
+                  <div className="h-1 m-auto w-36 bg-main"></div>
                 </div>
               </div>
             ))}

@@ -11,8 +11,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "azul-marino-oscuro": "#13111C",
-        "azul-verdoso": "#09959F",
+        "background": "#13111C",
+        "main": "#607FEF",
+        "gris": "#636363",
       },
       fontFamily: {
         raleway: ["Raleway", "sans-serif"],
