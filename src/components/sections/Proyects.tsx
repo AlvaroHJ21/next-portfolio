@@ -1,7 +1,11 @@
+import { useState } from "react";
+
+import { RevealWrapper } from "next-reveal";
+
 import Section from "../layouts/Section";
 import Button from "../ui/Button";
 
-type NameCategory = "react" | "mongodb" | "flutter" | "express" | "nodejs";
+type NameCategory = "React" | "Mongodb" | "Flutter" | "Express" | "Nodejs";
 
 interface Proyect {
   id: number;
@@ -11,19 +15,18 @@ interface Proyect {
   categories: { name: NameCategory }[];
 }
 
-const proyects: Proyect[] = [
+const initialProyects: Proyect[] = [
   {
     id: 1,
-    title: "Ecommerce Books",
+    title: "Audífonos",
     description:
       "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
-    image:
-      "https://s3-alpha.figma.com/hub/file/763524909/8af4a269-fb28-40e0-866c-9b9c7851b69f-cover.png",
+    image: "/img/cover-audifonos.png",
     categories: [
-      { name: "mongodb" },
-      { name: "express" },
-      { name: "react" },
-      { name: "nodejs" },
+      { name: "Mongodb" },
+      { name: "Express" },
+      { name: "React" },
+      { name: "Nodejs" },
     ],
   },
   {
@@ -31,56 +34,173 @@ const proyects: Proyect[] = [
     title: "Ecommerce Books",
     description:
       "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
-    image:
-      "https://s3-alpha.figma.com/hub/file/763524909/8af4a269-fb28-40e0-866c-9b9c7851b69f-cover.png",
+    image: "/img/cover-book-ecommerce.png",
     categories: [
-      { name: "mongodb" },
-      { name: "express" },
-      { name: "react" },
-      { name: "nodejs" },
+      { name: "Mongodb" },
+      { name: "Express" },
+      { name: "React" },
+      { name: "Nodejs" },
     ],
   },
   {
     id: 3,
-    title: "Ecommerce Books",
+    title: "Bosque",
     description:
       "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
-    image:
-      "https://s3-alpha.figma.com/hub/file/763524909/8af4a269-fb28-40e0-866c-9b9c7851b69f-cover.png",
+    image: "/img/cover-bosque.png",
     categories: [
-      { name: "mongodb" },
-      { name: "express" },
-      { name: "react" },
-      { name: "nodejs" },
+      { name: "Mongodb" },
+      { name: "Express" },
+      { name: "React" },
+      { name: "Nodejs" },
+    ],
+  },
+  {
+    id: 4,
+    title: "Cafetería",
+    description:
+      "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
+    image: "/img/cover-cafeteria.png",
+    categories: [
+      { name: "Mongodb" },
+      { name: "Express" },
+      { name: "React" },
+      { name: "Nodejs" },
+    ],
+  },
+  {
+    id: 5,
+    title: "Muebles",
+    description:
+      "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
+    image: "/img/cover-muebles.png",
+    categories: [
+      { name: "Mongodb" },
+      { name: "Express" },
+      { name: "React" },
+      { name: "Nodejs" },
+    ],
+  },
+  {
+    id: 6,
+    title: "Mis Pokemones",
+    description:
+      "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
+    image: "/img/cover-pokemon.png",
+    categories: [
+      { name: "Mongodb" },
+      { name: "Express" },
+      { name: "React" },
+      { name: "Nodejs" },
+    ],
+  },
+  {
+    id: 7,
+    title: "¿Quién es ese Pokemón?",
+    description:
+      "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
+    image: "/img/cover-pokemon-2.png",
+    categories: [
+      { name: "Mongodb" },
+      { name: "Express" },
+      { name: "React" },
+      { name: "Nodejs" },
+    ],
+  },
+  {
+    id: 8,
+    title: "eWallet",
+    description:
+      "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
+    image: "/img/cover-wallet.png",
+    categories: [
+      { name: "Mongodb" },
+      { name: "Express" },
+      { name: "React" },
+      { name: "Nodejs" },
     ],
   },
 ];
 
+const initialTags = [
+  {
+    id: 1,
+    name: "HTML CSS JS",
+    isActive: false,
+  },
+  {
+    id: 2,
+    name: "React",
+    isActive: true,
+  },
+  {
+    id: 3,
+    name: "NodeJS",
+    isActive: false,
+  },
+  {
+    id: 4,
+    name: "Flutter",
+    isActive: false,
+  },
+];
+
 export default function Proyects() {
+  const [tags, setTags] = useState(initialTags);
+  const [proyects, setProyects] = useState(initialProyects);
+
+  function handleClickTag(id: number) {
+    setTags(
+      tags.map((tag) =>
+        tag.id === id
+          ? {
+              ...tag,
+              isActive: !tag.isActive,
+            }
+          : tag
+      )
+    );
+  }
+
   return (
     <Section id="proyects">
       <div className="pt-16">
         <div className="flex flex-col items-center gap-8">
-          <h2 className="font-black uppercase text-32">
-            Mis <span className="text-main">proyectos</span>
-          </h2>
-          <div className="flex gap-2">
-            <Button text="Frontend" variant="outline" />
-            <Button text="Full stack" />
-            <Button text="Móvil" variant="outline" />
+          <RevealWrapper>
+            <h2 className="font-black uppercase text-32">
+              Mis <span className="text-main">proyectos</span>
+            </h2>
+          </RevealWrapper>
+          <div className="flex flex-wrap justify-center gap-2">
+            {tags.map((tag) => (
+              <Button
+                key={tag.id}
+                onClick={() => handleClickTag(tag.id)}
+                text={tag.name}
+                variant={tag.isActive ? "filled" : "outline"}
+              />
+            ))}
           </div>
           <div className="flex flex-col gap-8">
             {proyects.map((proyect) => (
-              <div key={proyect.id} className="flex flex-col gap-4 md:gap-8 md:flex-row md:items-center">
-                <div>
-                  <img src={proyect.image} alt={proyect.title} className="transition-transform cursor-pointer hover:scale-105" />
+              <RevealWrapper
+                origin="bottom"
+                key={proyect.id}
+                className="flex flex-col gap-4 md:gap-8 md:flex-row md:items-center"
+              >
+                <div className="overflow-hidden">
+                  <img
+                    src={proyect.image}
+                    alt={proyect.title}
+                    className="transition-transform cursor-pointer hover:scale-110"
+                  />
                 </div>
                 <div className="flex flex-col gap-4 md:justify-center">
-                  <h3 className="text-20">{proyect.title}</h3>
+                  <h3 className="font-bold text-20">{proyect.title}</h3>
                   <p>{proyect.description}</p>
                   <div className="h-1 m-auto w-36 bg-main"></div>
                 </div>
-              </div>
+              </RevealWrapper>
             ))}
           </div>
         </div>

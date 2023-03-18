@@ -1,5 +1,7 @@
-import Section from "@/components/layouts/Section";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { RevealWrapper } from "next-reveal";
+
+import Section from "@/components/layouts/Section";
 import Button from "@/components/ui/Button";
 
 export default function AboutMe() {
@@ -7,21 +9,19 @@ export default function AboutMe() {
     <Section id="about-us">
       <div className="flex flex-col items-center justify-center h-screen gap-4 md:flex-row">
         
-        <div className="flex justify-center md:flex-1">
-          <div className="relative flex justify-center w-fit">
-            <div className="z-10 absolute top-2 left-2 w-full h-full rounded-full rotate-[30deg] bg-main"></div>
-
-            <div className="relative z-20 max-w-[220px] md:max-w-[320px]">
+        {/* Imagen */}
+        <RevealWrapper origin="top" reset className="flex justify-center md:flex-1">
+          <div className="relative flex justify-center max-w-sm w-fit">
               <img
                 className="object-cover max-w-full"
-                src="/img/perfil-real.png"
+                src="/img/my-perfil.png"
                 alt="perfil"
               />
-            </div>
           </div>
-        </div>
-        
-        <div className="">
+        </RevealWrapper>
+
+        {/* Texto y cta */}
+        <RevealWrapper origin="bottom" reset className="">
           <div className="flex flex-col items-center gap-4 md:items-end">
             <h2 className="font-black uppercase text-32">
               Sobre <span className="text-main">mí</span>
@@ -43,7 +43,7 @@ export default function AboutMe() {
               suffixIcon={<AiOutlineArrowRight size={24} />}
             />
           </div>
-        </div>
+        </RevealWrapper>
       </div>
     </Section>
   );

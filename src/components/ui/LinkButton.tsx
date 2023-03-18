@@ -1,34 +1,42 @@
+import Link from "next/link";
+
 import styles from './ui.module.css';
 
 interface Props {
+  href: string;
   text: string;
+  target?: string;
+  download?: string;
   variant?: Variant;
   suffixIcon?: React.ReactNode;
   prefixIcon?: React.ReactNode;
-  onClick?: () => void;
 }
 
 type Variant = "filled" | "outline";
 
-export default function Button({
+export default function LinkButton({
+  href,
   text,
+  target,
+  download,
   variant = "filled",
   suffixIcon,
   prefixIcon,
-  onClick
 }: Props) {
   return (
-    <button
-      onClick={onClick}
+    <Link
+      href={href}
       className={`flex items-center justify-center gap-2 px-4 py-2 font-bold rounded-full border-2 ${
         variant === "filled"
           ? "bg-main border-transparent"
           : "border-main bg-transparent"
       } ${styles.btn}`}
+      target={target}
+      download={download}
     >
       {prefixIcon}
       {text}
       {suffixIcon}
-    </button>
+    </Link>
   );
 }

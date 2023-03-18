@@ -1,4 +1,5 @@
-import React from "react";
+import { RevealWrapper } from "next-reveal";
+
 import Section from "../layouts/Section";
 
 const skills = [
@@ -7,7 +8,7 @@ const skills = [
     skills: [
       {
         name: "HTML/5",
-        rating: 4,
+        rating: 5,
       },
       {
         name: "CSS/3",
@@ -16,6 +17,10 @@ const skills = [
       {
         name: "Javascript/EMC6",
         rating: 5,
+      },
+      {
+        name: "Sass",
+        rating: 3,
       },
       {
         name: "Tailwind 3.x",
@@ -28,6 +33,10 @@ const skills = [
       {
         name: "NodeJS/Express",
         rating: 5,
+      },
+      {
+        name: "NestJS",
+        rating: 3,
       },
       {
         name: "Typescript",
@@ -51,16 +60,16 @@ const skills = [
       },
       {
         name: "GIT",
-        rating: 5,
+        rating: 4,
       },
       {
         name: "Docker",
-        rating: 5,
+        rating: 3,
       },
     ],
   },
   {
-    category: "Lenguaje",
+    category: "Idiomas",
     skills: [
       {
         name: "Español",
@@ -77,7 +86,7 @@ const skills = [
     skills: [
       {
         name: "Gihub",
-        rating: 5,
+        rating: 4,
       },
       {
         name: "Figma",
@@ -85,7 +94,7 @@ const skills = [
       },
       {
         name: "Jira/Atlassian",
-        rating: 5,
+        rating: 4,
       },
       {
         name: "Scrumm/Agile",
@@ -103,12 +112,15 @@ export default function Skills() {
   return (
     <Section id="skills">
       <div className="flex flex-col items-center justify-center min-h-screen gap-8 pt-16 item-center">
-        <h2 className="font-black uppercase text-32">
-          Mis <span className="text-main">habilidades</span>
-        </h2>
+        <RevealWrapper>
+          <h2 className="font-black uppercase text-32">
+            Mis <span className="text-main">habilidades</span>
+          </h2>
+        </RevealWrapper>
+
         <div className="flex flex-col w-full gap-8 md:grid md:grid-cols-2 md:grid-rows-2 md:grid-flow-col">
           {skills.map((skill, index) => (
-            <div key={index} className="w-full md:first:row-span-2">
+            <RevealWrapper origin="bottom" reset key={index} className="w-full md:first:row-span-2">
               <h3 className="mb-4 font-black text-center text-20">
                 {skill.category}
               </h3>
@@ -133,7 +145,7 @@ export default function Skills() {
                   </div>
                 ))}
               </div>
-            </div>
+            </RevealWrapper>
           ))}
         </div>
       </div>

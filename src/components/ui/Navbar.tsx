@@ -59,8 +59,8 @@ export default function Navbar() {
         <div className="max-w-[1000px] flex justify-between w-[90%] m-auto item-center">
           {/* Icono */}
           <div className="min-h-[64px] flex items-center justify-end">
-            <a href="#home" className="left-0 px-4 py-2 text-20">
-              Alvaro<span className="font-black ">HJ</span>
+            <a onClick={handleClickLink} href="#home" className="left-0 px-4 py-2 text-20">
+              <span className="font-bold text-main text-[1.8rem]">{'>_'}</span>Alvaro<span className="font-black ">HJ</span>
             </a>
           </div>
 
