@@ -108,19 +108,19 @@ export default function Navbar() {
       {/* Menu hamburguesa */}
       <div
         onClick={() => setIsOpen(false)}
-        className={`fixed z-40 bg-black h-screen md:hidden transition-opacity ${
-          isOpen ? "bg-opacity-50 w-full" : " bg-opacity-0 w-0"
+        className={`fixed z-40 bg-black h-screen md:hidden backdrop-blur-sm transition-opacity bg-opacity-50 ${
+          isOpen ? "w-full" : "w-0"
         }`}
       >
         <div
-          className={`flex absolute flex-col items-center justify-center gap-2 h-full pt-16 top-0 backdrop-blur-sm transition-all ${
-            isOpen ? "right-0 w-full" : "right-[-400px] w-0 overflow-hidden"
+          className={`absolute right-0 flex  flex-col items-center justify-center gap-2 h-full top-0  transition-all ${
+            isOpen ? "w-full" : "w-0 overflow-hidden"
           }`}
         >
           {links.map((link, index) => (
             <a
               key={index}
-              className={`text-20 text-white px-4 py-2 text-center rounded-full hover:bg-main w-fit`}
+              className={`text-20 font-bold text-white px-4 py-2 text-center rounded-full hover:bg-main w-fit`}
               href={link.to}
             >
               {link.name}
