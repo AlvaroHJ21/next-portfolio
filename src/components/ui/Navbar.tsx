@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 
 import { AiOutlineClose } from "react-icons/ai";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
+
 import { checkIfSectionIsVisible } from "../../utils/index";
+import ButtonMode from "./ButtonMode";
 
 const initLinks = [
   {
@@ -101,6 +103,9 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
+            <div className="ml-4">
+              <ButtonMode />
+            </div>
           </nav>
         </div>
       </nav>
@@ -108,7 +113,7 @@ export default function Navbar() {
       {/* Menu hamburguesa */}
       <div
         onClick={() => setIsOpen(false)}
-        className={`fixed z-40 bg-black h-screen md:hidden backdrop-blur-sm transition-opacity bg-opacity-50 ${
+        className={`fixed z-40 bg-black h-screen md:hidden backdrop-blur-sm transition-opacity bg-opacity-60 ${
           isOpen ? "w-full" : "w-0"
         }`}
       >
@@ -126,6 +131,9 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
+          <div className="p-2">
+          <ButtonMode />
+          </div>
         </div>
       </div>
     </>

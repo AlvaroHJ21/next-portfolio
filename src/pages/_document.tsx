@@ -4,7 +4,7 @@ export default function Document() {
     return (
         <Html lang="en" className='scroll-smooth'>
             <Head>
-                <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+                <link rel="icon" type="image/svg+xml" href="/icon.svg" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={'anonymous'} />
                 <link
