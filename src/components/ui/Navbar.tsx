@@ -37,17 +37,19 @@ const initLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const [links, setLinks] = useState(initLinks)
+  const [links, setLinks] = useState(initLinks);
 
   function handleClickMenu() {
     setIsOpen(!isOpen);
   }
-  
-  function handleClickLink (){
+
+  function handleClickLink() {
     setTimeout(() => {
       setLinks(
         links.map((link) =>
-          link.to === window.location.hash ? { ...link, isActive: true } : { ...link, isActive: false }
+          link.to === window.location.hash
+            ? { ...link, isActive: true }
+            : { ...link, isActive: false }
         )
       );
     }, 10);
@@ -59,8 +61,13 @@ export default function Navbar() {
         <div className="max-w-[1000px] flex justify-between w-[90%] m-auto item-center">
           {/* Icono */}
           <div className="min-h-[64px] flex items-center justify-end">
-            <a onClick={handleClickLink} href="#home" className="left-0 px-4 py-2 text-20">
-              <span className="font-bold text-main text-[1.8rem]">{'>_'}</span>Alvaro<span className="font-black ">HJ</span>
+            <a
+              // onClick={handleClickLink}
+              href="#home"
+              className="left-0 px-4 py-2 text-20"
+            >
+              <span className="font-bold text-main text-[1.8rem]">{">_"}</span>
+              Alvaro<span className="font-black ">HJ</span>
             </a>
           </div>
 
@@ -85,11 +92,10 @@ export default function Navbar() {
           <nav className="hidden text-right md:flex md:items-center">
             {links.map((link, index) => (
               <a
-                onClick={handleClickLink}
+                // onClick={handleClickLink}
                 key={index}
-                className={`px-4 py-2 transition-all border-b-2 ${
-                  link.isActive ? "border-b-main" : "border-b-transparent"
-                }`}
+                className={`px-4 py-2 transition-all border-b-2 border-b-transparent hover:border-b-main hover:text-main
+                `}
                 href={link.to}
               >
                 {link.name}
@@ -107,14 +113,14 @@ export default function Navbar() {
         }`}
       >
         <div
-          className={`flex relative flex-col h-full pt-16 top-0 w-1/2 bg-main transition-all ${
-            isOpen ? "left-0" : "left-[-400px]"
+          className={`flex absolute flex-col items-center justify-center gap-2 h-full pt-16 top-0 backdrop-blur-sm transition-all ${
+            isOpen ? "right-0 w-full" : "right-[-400px] w-0 overflow-hidden"
           }`}
         >
           {links.map((link, index) => (
             <a
               key={index}
-              className={`text-20 text-white px-4 py-2 transition-all`}
+              className={`text-20 text-white px-4 py-2 text-center rounded-full hover:bg-main w-fit`}
               href={link.to}
             >
               {link.name}

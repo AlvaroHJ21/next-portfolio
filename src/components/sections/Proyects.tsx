@@ -10,6 +10,7 @@ type NameCategory = "React" | "Mongodb" | "Flutter" | "Express" | "Nodejs";
 interface Proyect {
   id: number;
   title: string;
+  subtitle?: string;
   description: string;
   image?: string;
   categories: { name: NameCategory }[];
@@ -18,7 +19,8 @@ interface Proyect {
 const initialProyects: Proyect[] = [
   {
     id: 1,
-    title: "Audífonos",
+    title: "Audífonos TechPRO",
+    subtitle: "Landing Page",
     description:
       "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
     image: "/img/cover-audifonos.png",
@@ -31,7 +33,8 @@ const initialProyects: Proyect[] = [
   },
   {
     id: 2,
-    title: "Ecommerce Books",
+    title: "Best Seller Books",
+    subtitle: "Eccomerce",
     description:
       "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
     image: "/img/cover-book-ecommerce.png",
@@ -44,7 +47,8 @@ const initialProyects: Proyect[] = [
   },
   {
     id: 3,
-    title: "Bosque",
+    title: "Arquitectura Bosque",
+    subtitle: "Landing Page",
     description:
       "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
     image: "/img/cover-bosque.png",
@@ -57,7 +61,8 @@ const initialProyects: Proyect[] = [
   },
   {
     id: 4,
-    title: "Cafetería",
+    title: "La Cafetería",
+    subtitle: "Landing Page",
     description:
       "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
     image: "/img/cover-cafeteria.png",
@@ -70,7 +75,8 @@ const initialProyects: Proyect[] = [
   },
   {
     id: 5,
-    title: "Muebles",
+    title: "Tiendas Muebles",
+    subtitle: "Página Web",
     description:
       "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
     image: "/img/cover-muebles.png",
@@ -83,7 +89,8 @@ const initialProyects: Proyect[] = [
   },
   {
     id: 6,
-    title: "Mis Pokemones",
+    title: "Mis Pokemons",
+    subtitle: "Aplicación Web",
     description:
       "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
     image: "/img/cover-pokemon.png",
@@ -97,6 +104,7 @@ const initialProyects: Proyect[] = [
   {
     id: 7,
     title: "¿Quién es ese Pokemón?",
+    subtitle: "Aplicación Web",
     description:
       "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
     image: "/img/cover-pokemon-2.png",
@@ -110,6 +118,7 @@ const initialProyects: Proyect[] = [
   {
     id: 8,
     title: "eWallet",
+    subtitle: "Landing Page",
     description:
       "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
     image: "/img/cover-wallet.png",
@@ -197,6 +206,7 @@ export default function Proyects() {
                 </div>
                 <div className="flex flex-col gap-4 md:justify-center">
                   <h3 className="font-bold text-20">{proyect.title}</h3>
+                  <h4 className="text-gray-400 subtitle">{proyect.subtitle}</h4>
                   <p>{proyect.description}</p>
                   <div className="h-1 m-auto w-36 bg-main"></div>
                 </div>
