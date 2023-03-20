@@ -20,7 +20,7 @@ const skills = [
       },
       {
         name: "Sass",
-        rating: 3,
+        rating: 5,
       },
       {
         name: "Tailwind 3.x",
