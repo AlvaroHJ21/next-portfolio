@@ -1,4 +1,4 @@
-import styles from './ui.module.css';
+import styles from "./ui.module.css";
 
 interface Props {
   text: string;
@@ -6,6 +6,7 @@ interface Props {
   suffixIcon?: React.ReactNode;
   prefixIcon?: React.ReactNode;
   onClick?: () => void;
+  type?: "button" | "submit" | "reset" | undefined;
 }
 
 type Variant = "filled" | "outline";
@@ -15,11 +16,13 @@ export default function Button({
   variant = "filled",
   suffixIcon,
   prefixIcon,
-  onClick
+  onClick,
+  type,
 }: Props) {
   return (
     <button
       onClick={onClick}
+      type={type}
       className={`flex items-center justify-center gap-2 px-4 py-2 font-bold rounded-full border-2 ${
         variant === "filled"
           ? "bg-main border-transparent"

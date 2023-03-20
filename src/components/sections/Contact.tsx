@@ -5,23 +5,43 @@ import { RevealWrapper } from "next-reveal";
 
 import Input from "../ui/Input";
 import Button from "../ui/Button";
-import LinkButton from '../ui/LinkButton';
+import LinkButton from "../ui/LinkButton";
 import Section from "../layouts/Section";
+import { FormEvent, useState, useRef } from 'react';
 
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const buttonMailto = useRef<HTMLAnchorElement>(null)
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    console.log({ name, email, message });
+    if (!buttonMailto.current) return;
+    buttonMailto.current.setAttribute(
+      "href",
+      `mailto:alvarohuaysara@gmail.com?subject=Nombre ${name}, correo ${email}&body=${message}`
+    );
+    buttonMailto.current.click();
+  }
+
   return (
     <Section id="contact">
       <div className="flex flex-col justify-center min-h-screen pt-16">
         <RevealWrapper>
-
-        <h2 className="mb-8 font-black text-center text-white uppercase text-32">
-          Contáctame
-        </h2>
+          <h2 className="mb-8 font-black text-center text-white uppercase text-32">
+            Contáctame
+          </h2>
         </RevealWrapper>
 
         <div className="flex flex-col gap-12 md:flex-row md:gap-24">
           {/* Texts */}
-          <RevealWrapper reset className="space-y-4 md:flex md:flex-1 md:flex-col md:justify-between">
+          <RevealWrapper
+            reset
+            className="space-y-4 md:flex md:flex-1 md:flex-col md:justify-between"
+          >
             <p className="text-center md:text-left">
               No dudes en contactarme si necesitas un desarrollador con
               experiencia para llevar tu proyecto digital al siguiente nivel.
@@ -50,12 +70,33 @@ export default function Contact() {
 
           {/* Form */}
           <RevealWrapper reset origin="bottom" className="md:flex-1">
-            <form action="" className="flex flex-col gap-4">
-              <Input placeholder="Nombre" />
-              <Input placeholder="Email" />
-              <Input placeholder="Mensaje" multiline />
-              <Button text="Enviar" />
+            <form
+              onSubmit={handleSubmit}
+              action=""
+              className="flex flex-col gap-4"
+            >
+              <Input
+                type="text"
+                placeholder="Nombre"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+              <Input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <Input
+                type="text"
+                placeholder="Mensaje"
+                multiline
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              />
+              <Button type="submit" text="Enviar" />
             </form>
+            <a ref={buttonMailto} href=""></a>
           </RevealWrapper>
         </div>
       </div>
