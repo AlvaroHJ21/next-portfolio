@@ -8,7 +8,7 @@ export default function Section({
     return (
         <section
             id={id}
-            className='text-white bg-background'
+            className='text-white'
         >
             <div className='max-w-[1000px] w-[90%] m-auto'>
                 {children}
