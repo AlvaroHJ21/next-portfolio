@@ -201,7 +201,7 @@ export default function Proyects() {
                   <img
                     src={proyect.image}
                     alt={proyect.title}
-                    className="transition-transform cursor-pointer hover:scale-110"
+                    className="transition-transform duration-300 cursor-pointer hover:scale-110"
                   />
                 </div>
                 <div className="flex flex-col gap-4 md:justify-center">
