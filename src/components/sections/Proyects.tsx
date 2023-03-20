@@ -176,7 +176,7 @@ export default function Proyects() {
       <div className="pt-16">
         <div className="flex flex-col items-center gap-8">
           <RevealWrapper>
-            <h2 className="font-black uppercase text-32">
+            <h2 className="font-black text-gray-600 uppercase text-32 dark:text-white">
               Mis <span className="text-main">proyectos</span>
             </h2>
           </RevealWrapper>
@@ -190,13 +190,15 @@ export default function Proyects() {
               />
             ))}
           </div>
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-12 ">
             {proyects.map((proyect) => (
               <RevealWrapper
                 origin="bottom"
                 key={proyect.id}
-                className="flex flex-col gap-4 md:gap-8 md:flex-row md:items-center"
+                className="flex flex-col-reverse gap-4 md:gap-8 md:flex-row md:items-center"
               >
+                <div className="block h-1 m-auto w-36 bg-main md:hidden"></div>
+                {/* Imagen del proyecto */}
                 <div className="overflow-hidden">
                   <img
                     src={proyect.image}
@@ -204,12 +206,21 @@ export default function Proyects() {
                     className="transition-transform duration-300 cursor-pointer hover:scale-110"
                   />
                 </div>
+
+                {/* Textos del proyecto */}
                 <div className="flex flex-col gap-4 md:justify-center">
-                  <h3 className="font-bold text-20">{proyect.title}</h3>
-                  <h4 className="text-gray-300 subtitle">{proyect.subtitle}</h4>
-                  <p>{proyect.description}</p>
-                  <div className="h-1 m-auto w-36 bg-main"></div>
+                  <h3 className="font-bold text-gray-600 text-20 dark:text-white">
+                    {proyect.title}
+                  </h3>
+                  <h4 className="text-gray-500 dark:text-gray-300 subtitle">
+                    {proyect.subtitle}
+                  </h4>
+                  <p className="text-black dark:text-white">
+                    {proyect.description}
+                  </p>
+                  <div className="hidden h-1 m-auto w-36 bg-main md:block"></div>
                 </div>
+                
               </RevealWrapper>
             ))}
           </div>

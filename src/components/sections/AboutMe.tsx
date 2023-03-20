@@ -7,10 +7,10 @@ import Button from "@/components/ui/Button";
 export default function AboutMe() {
   return (
     <Section id="about-us">
-      <div className="flex flex-col items-center justify-center h-screen gap-4 md:flex-row">
+      <div className="flex flex-col-reverse items-center justify-center min-h-screen gap-8 pt-16 md:flex-row md:pt-0 md:justify-center">
         
         {/* Imagen */}
-        <RevealWrapper origin="top" reset className="flex justify-center md:flex-1">
+        <RevealWrapper origin="bottom" reset className="flex justify-center md:flex-1">
           <div className="relative flex justify-center max-w-sm w-fit">
               <img
                 className="object-cover max-w-full transition-transform duration-300 cursor-pointer hover:scale-110"
@@ -21,13 +21,13 @@ export default function AboutMe() {
         </RevealWrapper>
 
         {/* Texto y cta */}
-        <RevealWrapper origin="bottom" reset className="">
+        <RevealWrapper origin="top" reset className="">
           <div className="flex flex-col items-center gap-4 md:items-end">
-            <h2 className="font-black uppercase text-32">
+            <h2 className="font-black text-gray-600 uppercase text-32 dark:text-white">
               Sobre <span className="text-main">mí</span>
             </h2>
 
-            <p className="max-w-md text-center md:text-right">
+            <p className="max-w-md text-center text-black md:text-right dark:text-white">
               ¡Hola! Soy un desarrollador web con experiencia en frontend,
               backend y desarrollo móvil. Me apasiona crear soluciones
               tecnológicas innovadoras y eficientes para mejorar la experiencia

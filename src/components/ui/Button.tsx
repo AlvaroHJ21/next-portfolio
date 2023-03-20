@@ -26,7 +26,7 @@ export default function Button({
       className={`flex items-center justify-center gap-2 px-4 py-2 font-bold rounded-full border-2 ${
         variant === "filled"
           ? "bg-main border-transparent"
-          : "border-main bg-transparent"
+          : "border-main bg-transparent text-main dark:text-white"
       } ${styles.btn}`}
     >
       {prefixIcon}

@@ -59,14 +59,14 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed z-50 w-full text-white bg-background">
+      <nav className="fixed z-50 w-full text-white bg-white dark:bg-background">
         <div className="max-w-[1000px] flex justify-between w-[90%] m-auto item-center">
           {/* Icono */}
           <div className="min-h-[64px] flex items-center justify-end">
             <a
               // onClick={handleClickLink}
               href="#home"
-              className="left-0 px-4 py-2 text-20"
+              className="left-0 px-4 py-2 text-black text-20 dark:text-white"
             >
               <span className="font-bold text-main text-[1.8rem]">{">_"}</span>
               Alvaro<span className="font-black ">HJ</span>
@@ -78,13 +78,13 @@ export default function Navbar() {
             {isOpen ? (
               <AiOutlineClose
                 onClick={handleClickMenu}
-                className="p-2 cursor-pointer "
+                className="p-2 cursor-pointer text-main dark:text-white"
                 size={44}
               />
             ) : (
               <HiOutlineMenuAlt3
                 onClick={handleClickMenu}
-                className="p-2 cursor-pointer"
+                className="p-2 cursor-pointer text-main dark:text-white"
                 size={44}
               />
             )}
@@ -96,8 +96,10 @@ export default function Navbar() {
               <a
                 // onClick={handleClickLink}
                 key={index}
-                className={`px-4 py-2 transition-all border-b-2 border-b-transparent hover:border-b-main hover:text-main
-                `}
+                className={`px-4 py-2 transition-all border-b-2 border-b-transparent text-black
+                 hover:border-b-main hover:text-main
+                  dark:text-white dark:hover:text-main
+                 `}
                 href={link.to}
               >
                 {link.name}
@@ -125,14 +127,14 @@ export default function Navbar() {
           {links.map((link, index) => (
             <a
               key={index}
-              className={`text-20 font-bold text-white px-4 py-2 text-center rounded-full hover:bg-main w-fit`}
+              className={`text-20 font-bold text-white px-4 py-2 text-center rounded-full hover:bg-main `}
               href={link.to}
             >
               {link.name}
             </a>
           ))}
           <div className="p-2">
-          <ButtonMode />
+            <ButtonMode size={32}/>
           </div>
         </div>
       </div>

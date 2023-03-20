@@ -7,14 +7,14 @@ import Input from "../ui/Input";
 import Button from "../ui/Button";
 import LinkButton from "../ui/LinkButton";
 import Section from "../layouts/Section";
-import { FormEvent, useState, useRef } from 'react';
+import { FormEvent, useState, useRef } from "react";
 
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const buttonMailto = useRef<HTMLAnchorElement>(null)
+  const buttonMailto = useRef<HTMLAnchorElement>(null);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -31,7 +31,7 @@ export default function Contact() {
     <Section id="contact">
       <div className="flex flex-col justify-center min-h-screen pt-16">
         <RevealWrapper>
-          <h2 className="mb-8 font-black text-center text-white uppercase text-32">
+          <h2 className="mb-8 font-black text-center uppercase text-main text-32 dark:text-white">
             Contáctame
           </h2>
         </RevealWrapper>
@@ -42,16 +42,22 @@ export default function Contact() {
             reset
             className="space-y-4 md:flex md:flex-1 md:flex-col md:justify-between"
           >
-            <p className="text-center md:text-left">
+            <p className="text-center text-black md:text-left dark:text-white">
               No dudes en contactarme si necesitas un desarrollador con
               experiencia para llevar tu proyecto digital al siguiente nivel.
             </p>
             <div className="flex flex-col gap-4">
-              <a href="mailto:alvarohuaysara@gmail.com" className="flex gap-2">
+              <a
+                href="mailto:alvarohuaysara@gmail.com"
+                className="flex gap-2 text-black dark:text-white"
+              >
                 <HiOutlineMail size={24} className="text-main" />
                 alvarohuaysara@gmail.com
               </a>
-              <a href="tel:+51926513695" className="flex gap-2">
+              <a
+                href="tel:+51926513695"
+                className="flex gap-2 text-black dark:text-white"
+              >
                 <AiOutlineWhatsApp size={24} className="text-main" />
                 +51 926513695
               </a>
@@ -75,25 +81,41 @@ export default function Contact() {
               action=""
               className="flex flex-col gap-4"
             >
-              <Input
-                type="text"
-                placeholder="Nombre"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-              <Input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <Input
-                type="text"
-                placeholder="Mensaje"
-                multiline
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-              />
+              <div>
+                <label className="block mb-2 ml-2 text-black dark:text-white" htmlFor="name">
+                  Nombre
+                </label>
+                <Input
+                  type="text"
+                  placeholder="John Doe"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+              <div>
+                <label className="block mb-2 ml-2 text-black dark:text-white" htmlFor="name">
+                  Email
+                </label>
+                <Input
+                  type="email"
+                  placeholder="johndoe@gmail.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div>
+                <label className="block mb-2 ml-2 text-black dark:text-white" htmlFor="name">
+                  Mensaje
+                </label>
+                <Input
+                  type="text"
+                  placeholder="Me gustaría consultarte..."
+                  multiline
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                />
+              </div>
+
               <Button type="submit" text="Enviar" />
             </form>
             <a ref={buttonMailto} href=""></a>

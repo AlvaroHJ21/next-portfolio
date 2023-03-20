@@ -113,7 +113,7 @@ export default function Skills() {
     <Section id="skills">
       <div className="flex flex-col items-center justify-center min-h-screen gap-8 pt-16 item-center">
         <RevealWrapper>
-          <h2 className="font-black uppercase text-32">
+          <h2 className="font-black text-gray-600 uppercase text-32 dark:text-white">
             Mis <span className="text-main">habilidades</span>
           </h2>
         </RevealWrapper>
@@ -121,13 +121,13 @@ export default function Skills() {
         <div className="flex flex-col w-full gap-8 md:grid md:grid-cols-2 md:grid-rows-2 md:grid-flow-col">
           {skills.map((skill, index) => (
             <RevealWrapper origin="bottom" reset key={index} className="w-full md:first:row-span-2">
-              <h3 className="mb-4 font-black text-center text-20">
+              <h3 className="mb-4 font-black text-center text-gray-600 text-20 dark:text-white">
                 {skill.category}
               </h3>
               <div className="flex flex-col gap-2">
                 {skill.skills.map((skill, index) => (
                   <div className="flex justify-between" key={index}>
-                    <p>{skill.name}</p>
+                    <p className="text-black dark:text-white">{skill.name}</p>
                     <div className="flex gap-2">
                       {[...Array(skill.rating)].map((i, index) => (
                         <div

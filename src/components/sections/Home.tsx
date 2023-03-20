@@ -31,17 +31,17 @@ export default function Hero() {
       <div className="flex flex-col items-center justify-center min-h-screen text-center gap-14">
         <div className="flex flex-col items-center gap-2 texts">
           <RevealWrapper>
-            <p className="font-regular text-32">Hola, soy</p>
+            <p className="text-gray-600 font-regular text-32 dark:text-white">Hola, soy</p>
 
             <h1 className="font-black font-raleway text-52 text-main">
               Alvaro Huaysara
             </h1>
           </RevealWrapper>
           <RevealWrapper origin="bottom">
-            <h2 className="font-bold font-raleway text-32">
+            <h2 className="font-bold text-gray-600 font-raleway text-32 dark:text-white">
               Desarrollador <span className="text"></span>
             </h2>
-            <p className="font-regular max-w-[620px] w-[90%] text-16">
+            <p className="font-regular text-black max-w-[620px] w-[90%] text-16 dark:text-white">
               Apasionado por crear soluciones tecnológicas innovadoras y
               eficientes para mejorar la experiencia del usuario. ¡Explora mi
               portafolio y contáctame para hablar sobre tus proyectos!
