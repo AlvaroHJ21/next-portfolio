@@ -206,7 +206,7 @@ export default function Proyects() {
                 </div>
                 <div className="flex flex-col gap-4 md:justify-center">
                   <h3 className="font-bold text-20">{proyect.title}</h3>
-                  <h4 className="text-gray-400 subtitle">{proyect.subtitle}</h4>
+                  <h4 className="text-gray-300 subtitle">{proyect.subtitle}</h4>
                   <p>{proyect.description}</p>
                   <div className="h-1 m-auto w-36 bg-main"></div>
                 </div>
