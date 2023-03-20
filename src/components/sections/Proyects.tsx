@@ -62,7 +62,7 @@ const initialProyects: Proyect[] = [
   {
     id: 4,
     title: "La Cafetería",
-    subtitle: "Landing Page",
+    subtitle: "Página Web",
     description:
       "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
     image: "/img/cover-cafeteria.png",
