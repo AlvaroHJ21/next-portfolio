@@ -23,7 +23,7 @@ const initialProyects: Proyect[] = [
     subtitle: "Landing Page",
     description:
       "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
-    image: "/img/cover-audifonos.png",
+    image: "/img/cover-audifonos.webp",
     categories: [
       { name: "Mongodb" },
       { name: "Express" },
@@ -37,7 +37,7 @@ const initialProyects: Proyect[] = [
     subtitle: "Eccomerce",
     description:
       "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
-    image: "/img/cover-book-ecommerce.png",
+    image: "/img/cover-book-ecommerce.webp",
     categories: [
       { name: "Mongodb" },
       { name: "Express" },
@@ -51,7 +51,7 @@ const initialProyects: Proyect[] = [
     subtitle: "Landing Page",
     description:
       "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
-    image: "/img/cover-bosque.png",
+    image: "/img/cover-bosque.webp",
     categories: [
       { name: "Mongodb" },
       { name: "Express" },
@@ -65,7 +65,7 @@ const initialProyects: Proyect[] = [
     subtitle: "Página Web",
     description:
       "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
-    image: "/img/cover-cafeteria.png",
+    image: "/img/cover-cafeteria.webp",
     categories: [
       { name: "Mongodb" },
       { name: "Express" },
@@ -79,7 +79,7 @@ const initialProyects: Proyect[] = [
     subtitle: "Página Web",
     description:
       "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
-    image: "/img/cover-muebles.png",
+    image: "/img/cover-muebles.webp",
     categories: [
       { name: "Mongodb" },
       { name: "Express" },
@@ -93,7 +93,7 @@ const initialProyects: Proyect[] = [
     subtitle: "Aplicación Web",
     description:
       "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
-    image: "/img/cover-pokemon.png",
+    image: "/img/cover-pokemon.webp",
     categories: [
       { name: "Mongodb" },
       { name: "Express" },
@@ -107,7 +107,7 @@ const initialProyects: Proyect[] = [
     subtitle: "Aplicación Web",
     description:
       "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
-    image: "/img/cover-pokemon-2.png",
+    image: "/img/cover-pokemon-2.webp",
     categories: [
       { name: "Mongodb" },
       { name: "Express" },
@@ -121,7 +121,7 @@ const initialProyects: Proyect[] = [
     subtitle: "Landing Page",
     description:
       "Ullamco culpa proident voluptate nostrud elit incididunt eiusmod adipisicing. Dolor eiusmod et tempor ex nostrud cillum anim non magna voluptate.",
-    image: "/img/cover-wallet.png",
+    image: "/img/cover-wallet.webp",
     categories: [
       { name: "Mongodb" },
       { name: "Express" },

@@ -14,7 +14,7 @@ export default function AboutMe() {
           <div className="relative flex justify-center max-w-sm w-fit">
               <img
                 className="object-cover max-w-full transition-transform duration-300 cursor-pointer hover:scale-110"
-                src="/img/my-perfil.png"
+                src="/img/my-perfil.webp"
                 alt="perfil"
               />
           </div>
