@@ -118,7 +118,7 @@ export default function Contact() {
 
               <Button type="submit" text="Enviar" />
             </form>
-            <a ref={buttonMailto} href=""></a>
+            <a ref={buttonMailto} href="#"></a>
           </RevealWrapper>
         </div>
       </div>
