@@ -204,6 +204,8 @@ export default function Proyects() {
                     src={proyect.image}
                     alt={proyect.title}
                     className="transition-transform duration-300 cursor-pointer hover:scale-110"
+                    width={'100%'}
+                    height={384}
                   />
                 </div>
 

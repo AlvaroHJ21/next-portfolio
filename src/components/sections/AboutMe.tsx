@@ -16,6 +16,8 @@ export default function AboutMe() {
                 className="object-cover max-w-full transition-transform duration-300 cursor-pointer hover:scale-110"
                 src="/img/my-perfil.webp"
                 alt="perfil"
+                width={384}
+                height={384}
               />
           </div>
         </RevealWrapper>
