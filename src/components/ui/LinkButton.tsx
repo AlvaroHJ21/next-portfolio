@@ -28,7 +28,7 @@ export default function LinkButton({
       href={href}
       className={`flex items-center justify-center gap-2 px-4 py-2 font-bold rounded-full border-2 ${
         variant === "filled"
-          ? "bg-main border-transparent"
+          ? "bg-main border-transparent text-white"
           : "border-main bg-transparent text-main dark:text-white"
       } ${styles.btn}`}
       target={target}

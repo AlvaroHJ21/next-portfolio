@@ -111,7 +111,7 @@ const skills = [
 export default function Skills() {
   return (
     <Section id="skills">
-      <div className="flex flex-col items-center justify-center min-h-screen gap-8 pt-16 item-center">
+      <div className="flex flex-col items-center justify-center gap-8 py-20 md:justify-start item-center">
         <RevealWrapper>
           <h2 className="font-black text-gray-600 uppercase text-32 dark:text-white">
             Mis <span className="text-main">habilidades</span>

@@ -28,19 +28,18 @@ export default function Contact() {
   }
 
   return (
-    <Section id="contact">
-      <div className="flex flex-col justify-center min-h-screen pt-16">
-        <RevealWrapper>
+    <section id="contact">
+      <div className="flex flex-col justify-center py-20">
+        <div>
           <h2 className="mb-8 font-black text-center uppercase text-main text-32 dark:text-white">
             Contáctame
           </h2>
-        </RevealWrapper>
+        </div>
 
-        <div className="flex flex-col gap-12 md:flex-row md:gap-24">
+        <div className="flex flex-col gap-12 md:justify-center md:flex-row md:gap-12">
           {/* Texts */}
-          <RevealWrapper
-            reset
-            className="space-y-4 md:flex md:flex-1 md:flex-col md:justify-between"
+          <div
+            className="space-y-4 md:flex md:flex-col md:justify-between md:max-w-sm"
           >
             <p className="text-center text-black md:text-left dark:text-white">
               No dudes en contactarme si necesitas un desarrollador con
@@ -72,16 +71,16 @@ export default function Contact() {
                 />
               </div>
             </div>
-          </RevealWrapper>
+          </div>
 
           {/* Form */}
-          <RevealWrapper reset origin="bottom" className="md:flex-1">
+          <div className="w-full md:max-w-lg">
             <form
               onSubmit={handleSubmit}
               action=""
               className="flex flex-col gap-4"
             >
-              <div>
+              <div className="">
                 <label className="block mb-2 ml-2 text-black dark:text-white" htmlFor="name">
                   Nombre
                 </label>
@@ -118,10 +117,10 @@ export default function Contact() {
 
               <Button type="submit" text="Enviar" />
             </form>
-            <a ref={buttonMailto} href="#"></a>
-          </RevealWrapper>
+            <a ref={buttonMailto} href="#" className="hidden"></a>
+          </div>
         </div>
       </div>
-    </Section>
+    </section>
   );
 }
