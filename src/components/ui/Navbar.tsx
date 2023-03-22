@@ -10,27 +10,27 @@ import ButtonMode from "./ButtonMode";
 
 const initLinks = [
   {
-    to: "#home",
+    to: "/#home",
     name: "Home",
     isActive: true,
   },
   {
-    to: "#about-us",
+    to: "/#about-us",
     name: "Sobre mí",
     isActive: false,
   },
   {
-    to: "#skills",
+    to: "/#skills",
     name: "Habilidades",
     isActive: false,
   },
   {
-    to: "#proyects",
+    to: "/#proyects",
     name: "Proyectos",
     isActive: false,
   },
   {
-    to: "#contact",
+    to: "/#contact",
     name: "Contacto",
     isActive: false,
   },
@@ -60,17 +60,17 @@ export default function Navbar() {
   return (
     <>
       <nav className="fixed z-50 w-full text-white bg-white dark:bg-background">
-        <div className="max-w-[1000px] flex justify-between w-[90%] m-auto item-center">
+        <div className="container flex justify-between w-[90%] m-auto item-center">
           {/* Icono */}
           <div className="min-h-[64px] flex items-center justify-end">
-            <a
+            <Link
               // onClick={handleClickLink}
-              href="#home"
+              href="/#home"
               className="left-0 px-4 py-2 text-black text-20 dark:text-white"
             >
               <span className="font-bold text-main text-[1.8rem]">{">_"}</span>
               Alvaro<span className="font-black ">HJ</span>
-            </a>
+            </Link>
           </div>
 
           {/* Menú item */}
@@ -93,7 +93,7 @@ export default function Navbar() {
           {/* Links */}
           <nav className="hidden text-right md:flex md:items-center">
             {links.map((link, index) => (
-              <a
+              <Link
                 // onClick={handleClickLink}
                 key={index}
                 className={`px-4 py-2 transition-all border-b-2 border-b-transparent text-black
@@ -103,7 +103,7 @@ export default function Navbar() {
                 href={link.to}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
             <div className="ml-4">
               <ButtonMode />

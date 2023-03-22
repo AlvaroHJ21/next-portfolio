@@ -3,6 +3,7 @@ import { RevealWrapper } from "next-reveal";
 
 import Section from "@/components/layouts/Section";
 import Button from "@/components/ui/Button";
+import Image from "next/image";
 
 export default function AboutMe() {
   return (
@@ -10,26 +11,26 @@ export default function AboutMe() {
       <div className="flex flex-col-reverse items-center justify-center min-h-screen gap-8 pt-16 md:flex-row md:pt-0 md:justify-center">
         
         {/* Imagen */}
-        <RevealWrapper origin="bottom" reset className="flex justify-center md:flex-1">
-          <div className="relative flex justify-center max-w-sm w-fit">
-              <img
-                className="object-cover max-w-full transition-transform duration-300 cursor-pointer hover:scale-110"
+        <RevealWrapper origin="bottom" reset className="md:flex-1">
+          <div className="m-auto max-w-sm">
+              <Image
+                className="object-cover w-full h-auto transition-transform duration-300 cursor-pointer hover:scale-110"
                 src="/img/my-perfil.webp"
                 alt="perfil"
-                width={384}
-                height={384}
+                width={500}
+                height={500}
               />
           </div>
         </RevealWrapper>
 
         {/* Texto y cta */}
-        <RevealWrapper origin="top" reset className="">
-          <div className="flex flex-col items-center gap-4 md:items-end">
+        <RevealWrapper origin="top" reset className="md:flex-1">
+          <div className="flex flex-col items-center gap-4 md:items-end xl:items-center md:flex-1">
             <h2 className="font-black text-gray-600 uppercase text-32 dark:text-white">
               Sobre <span className="text-main">mí</span>
             </h2>
 
-            <p className="max-w-md text-center text-black md:text-right dark:text-white">
+            <p className="text-center leading-8 max-w-3xl text-black md:text-right xl:text-center dark:text-white">
               ¡Hola! Soy un desarrollador web con experiencia en frontend,
               backend y desarrollo móvil. Me apasiona crear soluciones
               tecnológicas innovadoras y eficientes para mejorar la experiencia

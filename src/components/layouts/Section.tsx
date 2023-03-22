@@ -10,7 +10,7 @@ export default function Section({
             id={id}
             className='text-white'
         >
-            <div className='max-w-[1000px] w-[90%] m-auto'>
+            <div className='container w-[90%] m-auto'>
                 {children}
             </div>
         </section>

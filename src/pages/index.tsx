@@ -1,6 +1,12 @@
 import { Layout } from "@/components/layouts";
-import { AboutMe, Contact, Home, Proyects, Skills } from "@/components/sections/";
-import Footer from '@/components/sections/Footer';
+import {
+  AboutMe,
+  Contact,
+  Footer,
+  Home,
+  Proyects,
+  Skills,
+} from "@/components/sections";
 
 export default function Index() {
   return (
@@ -10,7 +16,7 @@ export default function Index() {
       <Skills />
       <Proyects />
       <Contact />
-      <Footer/>
+      <Footer />
     </Layout>
   );
 }

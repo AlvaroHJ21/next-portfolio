@@ -39,9 +39,9 @@ export default function Hero() {
           </RevealWrapper>
           <RevealWrapper origin="bottom">
             <h2 className="font-bold text-gray-600 font-raleway text-32 dark:text-white">
-              Desarrollador <span className="text"></span>
+              Desarrollador <br className="sm:hidden" /> <span className="text"></span>
             </h2>
-            <p className="font-regular text-black max-w-[620px] w-[90%] text-16 dark:text-white">
+            <p className="font-regular leading-[1.8] text-black max-w-[520px] text-16 dark:text-white">
               Apasionado por crear soluciones tecnológicas innovadoras y
               eficientes para mejorar la experiencia del usuario. ¡Explora mi
               portafolio y contáctame para hablar sobre tus proyectos!
@@ -57,7 +57,7 @@ export default function Hero() {
 
         {/* End Icons */}
 
-        <RevealWrapper className="flex gap-4">
+        <RevealWrapper className="flex flex-col sm:flex-row gap-4">
           <LinkButton text="Ver proyectos" href="#proyects" />
           <LinkButton
             text="Descarga mi CV"
