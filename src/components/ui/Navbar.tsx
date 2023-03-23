@@ -115,7 +115,7 @@ export default function Navbar() {
       {/* Menu hamburguesa */}
       <div
         onClick={() => setIsOpen(false)}
-        className={`fixed z-40 bg-black h-screen md:hidden backdrop-blur-sm transition-opacity bg-opacity-60 ${
+        className={`fixed top-0 z-40 bg-black h-screen md:hidden backdrop-blur-sm transition-opacity bg-opacity-60 ${
           isOpen ? "w-full" : "w-0"
         }`}
       >

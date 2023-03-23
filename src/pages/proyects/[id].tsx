@@ -24,7 +24,7 @@ export default function ProyectDetails({ proyect }: Props) {
           <div className="absolute top-0 w-full h-full bg-gray-400 dark:bg-black opacity-40"></div>
         </div>
 
-        <div className="relative flex flex-col md:flex-row gap-8 max-w-6xl w-[90%] m-auto mt-64 p-12 bg-white dark:bg-background z-10 rounded-md shadow-lg">
+        <div className="relative flex flex-col md:flex-row gap-8 max-w-6xl w-[90%] m-auto mt-64 p-6 sm:p-10 bg-white dark:bg-background z-10 rounded-md shadow-lg">
           <div className="space-y-8 md:flex-[2]">
             {/* Textos */}
             <div className="">
