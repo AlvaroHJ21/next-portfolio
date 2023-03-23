@@ -59,7 +59,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed z-50 w-full text-white bg-white dark:bg-background">
+      <nav className="fixed top-0 z-50 w-full text-white bg-white dark:bg-background">
         <div className="container flex justify-between w-[90%] m-auto item-center">
           {/* Icono */}
           <div className="min-h-[64px] flex items-center justify-end">

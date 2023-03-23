@@ -10,9 +10,10 @@ export default function ProyectDetails({ proyect }: Props) {
   return (
     <Layout title={`${proyect.title} - AlvaroHJ`}>
       <div className="bg-gray-50 dark:bg-background-light">
-        <div className="relative">
+
+        <div className="fixed top-0 w-full">
           <Image
-            className="w-full h-[380px] object-cover"
+            className="w-full h-[580px] object-cover"
             src={proyect.image!}
             alt={`Imagen del proyecto ${proyect.title}`}
             width={800}
@@ -23,7 +24,7 @@ export default function ProyectDetails({ proyect }: Props) {
           <div className="absolute top-0 w-full h-full bg-gray-400 dark:bg-black opacity-40"></div>
         </div>
 
-        <div className="relative flex flex-col md:flex-row gap-8 max-w-6xl w-[90%] m-auto p-12 bg-white dark:bg-background mt-[-6rem] z-10 rounded-md shadow-lg">
+        <div className="relative flex flex-col md:flex-row gap-8 max-w-6xl w-[90%] m-auto mt-64 p-12 bg-white dark:bg-background z-10 rounded-md shadow-lg">
           <div className="space-y-8 md:flex-[2]">
             {/* Textos */}
             <div className="">
@@ -58,14 +59,14 @@ export default function ProyectDetails({ proyect }: Props) {
           <div className="md:flex-1">
             <h3 className="mb-8 font-bold">Tecnologías</h3>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              {proyect.tecnolgoies?.map((tecnology) => (
-                <div>
+              {proyect.tecnolgoies?.map((tecnology, index) => (
+                <div key={index}>
                   <Image
                     src={tecnology.img}
                     alt={`Logo de ${tecnology.name}`}
                     width={80}
                     height={80}
-                    className="basis-[100px]"
+                    className="w-[100px]"
                   />
                 </div>
               ))}
