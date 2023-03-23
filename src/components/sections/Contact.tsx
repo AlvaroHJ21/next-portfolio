@@ -1,13 +1,13 @@
 import { HiOutlineMail } from "react-icons/hi";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import { BsDownload } from "react-icons/bs";
-import { RevealWrapper } from "next-reveal";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import Input from "../ui/Input";
 import Button from "../ui/Button";
 import LinkButton from "../ui/LinkButton";
-import Section from "../layouts/Section";
-import { FormEvent, useState, useRef } from "react";
+import { FormEvent, useState, useRef, useEffect } from "react";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -15,6 +15,10 @@ export default function Contact() {
   const [message, setMessage] = useState("");
 
   const buttonMailto = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -28,9 +32,9 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact">
+    <section id="contact" className="w-[90%] m-auto">
       <div className="flex flex-col justify-center py-20">
-        <div>
+        <div data-aos="fade-down">
           <h2 className="mb-8 font-black text-center uppercase text-main text-32 dark:text-white">
             Contáctame
           </h2>
@@ -39,13 +43,14 @@ export default function Contact() {
         <div className="flex flex-col gap-12 md:justify-center md:flex-row md:gap-12">
           {/* Texts */}
           <div
+            data-aos="fade-up"
             className="space-y-4 md:flex md:flex-col md:justify-between md:max-w-sm"
           >
             <p className="text-center text-black md:text-left dark:text-white">
               No dudes en contactarme si necesitas un desarrollador con
               experiencia para llevar tu proyecto digital al siguiente nivel.
             </p>
-            <div className="flex flex-col gap-4">
+            <div data-aos="fade-up" className="flex flex-col gap-4">
               <a
                 href="mailto:alvarohuaysara@gmail.com"
                 className="flex gap-2 text-black dark:text-white"
@@ -80,8 +85,11 @@ export default function Contact() {
               action=""
               className="flex flex-col gap-4"
             >
-              <div className="">
-                <label className="block mb-2 ml-2 text-black dark:text-white" htmlFor="name">
+              <div data-aos="fade-up">
+                <label
+                  className="block mb-2 ml-2 text-black dark:text-white"
+                  htmlFor="name"
+                >
                   Nombre
                 </label>
                 <Input
@@ -91,8 +99,11 @@ export default function Contact() {
                   onChange={(e) => setName(e.target.value)}
                 />
               </div>
-              <div>
-                <label className="block mb-2 ml-2 text-black dark:text-white" htmlFor="name">
+              <div data-aos="fade-up">
+                <label
+                  className="block mb-2 ml-2 text-black dark:text-white"
+                  htmlFor="name"
+                >
                   Email
                 </label>
                 <Input
@@ -102,8 +113,11 @@ export default function Contact() {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
-              <div>
-                <label className="block mb-2 ml-2 text-black dark:text-white" htmlFor="name">
+              <div data-aos="fade-up">
+                <label
+                  className="block mb-2 ml-2 text-black dark:text-white"
+                  htmlFor="name"
+                >
                   Mensaje
                 </label>
                 <Input
@@ -115,7 +129,9 @@ export default function Contact() {
                 />
               </div>
 
-              <Button type="submit" text="Enviar" />
+              <div data-aos="fade-up" className="flex flex-col">
+                <Button type="submit" text="Enviar" />
+              </div>
             </form>
             <a ref={buttonMailto} href="#" className="hidden"></a>
           </div>

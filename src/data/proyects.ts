@@ -1,4 +1,23 @@
+import {
+  CSSLogo,
+  expressLogo,
+  HTMLLogo,
+  mongoDBLogo,
+  nextjsLogo,
+  nextUILogo,
+  nodeJSLogo,
+  reactLogo,
+  sassLogo,
+  tailwindLogo,
+  vueLogo,
+} from "@/assets";
+
 type NameCategory = "React" | "Mongodb" | "Flutter" | "Express" | "Nodejs";
+
+export interface Tecnology {
+  name: string;
+  img: string;
+}
 
 export interface Proyect {
   id: number;
@@ -8,6 +27,7 @@ export interface Proyect {
   image?: string;
   image2?: string;
   categories: { name: NameCategory }[];
+  tecnolgoies?: Tecnology[];
 }
 
 export const proyects: Proyect[] = [
@@ -27,6 +47,16 @@ export const proyects: Proyect[] = [
       { name: "React" },
       { name: "Nodejs" },
     ],
+    tecnolgoies: [
+      {
+        name: "HTML",
+        img: HTMLLogo,
+      },
+      {
+        name: "CSS",
+        img: CSSLogo,
+      },
+    ],
   },
   {
     id: 2,
@@ -41,6 +71,28 @@ export const proyects: Proyect[] = [
       { name: "Express" },
       { name: "React" },
       { name: "Nodejs" },
+    ],
+    tecnolgoies: [
+      {
+        name: "React",
+        img: reactLogo,
+      },
+      {
+        name: "Tailwind",
+        img: tailwindLogo,
+      },
+      {
+        name: "NodeJS",
+        img: nodeJSLogo,
+      },
+      {
+        name: "ExpressJS",
+        img: expressLogo,
+      },
+      {
+        name: "MongoDB",
+        img: mongoDBLogo,
+      },
     ],
   },
   {
@@ -57,6 +109,16 @@ export const proyects: Proyect[] = [
       { name: "React" },
       { name: "Nodejs" },
     ],
+    tecnolgoies: [
+      {
+        name: "HTML",
+        img: HTMLLogo,
+      },
+      {
+        name: "CSS",
+        img: CSSLogo,
+      },
+    ],
   },
   {
     id: 4,
@@ -71,6 +133,20 @@ export const proyects: Proyect[] = [
       { name: "Express" },
       { name: "React" },
       { name: "Nodejs" },
+    ],
+    tecnolgoies: [
+      {
+        name: "HTML",
+        img: HTMLLogo,
+      },
+      {
+        name: "Sass",
+        img: sassLogo,
+      },
+      {
+        name: "NodeJS",
+        img: nodeJSLogo,
+      },
     ],
   },
   {
@@ -87,6 +163,16 @@ export const proyects: Proyect[] = [
       { name: "React" },
       { name: "Nodejs" },
     ],
+    tecnolgoies: [
+      {
+        name: "HTML",
+        img: HTMLLogo,
+      },
+      {
+        name: "CSS",
+        img: CSSLogo,
+      },
+    ],
   },
   {
     id: 6,
@@ -101,6 +187,16 @@ export const proyects: Proyect[] = [
       { name: "Express" },
       { name: "React" },
       { name: "Nodejs" },
+    ],
+    tecnolgoies: [
+      {
+        name: "NextJS",
+        img: nextjsLogo,
+      },
+      {
+        name: "NextUI",
+        img: nextUILogo,
+      },
     ],
   },
   {
@@ -117,6 +213,12 @@ export const proyects: Proyect[] = [
       { name: "React" },
       { name: "Nodejs" },
     ],
+    tecnolgoies: [
+      {
+        name: "Vue",
+        img: vueLogo,
+      },
+    ],
   },
   {
     id: 8,
@@ -131,6 +233,16 @@ export const proyects: Proyect[] = [
       { name: "Express" },
       { name: "React" },
       { name: "Nodejs" },
+    ],
+    tecnolgoies: [
+      {
+        name: "HTML",
+        img: HTMLLogo,
+      },
+      {
+        name: "CSS",
+        img: CSSLogo,
+      },
     ],
   },
 ];

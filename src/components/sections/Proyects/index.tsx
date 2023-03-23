@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
-import { RevealWrapper } from "next-reveal";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import Button from "../../ui/Button";
 import { proyects as initialProyects, Proyect } from "../../../data/proyects";
@@ -34,6 +35,10 @@ export default function Proyects() {
   const [proyects, setProyects] = useState<Proyect[]>([]);
 
   useEffect(() => {
+    AOS.init();
+  }, []);
+
+  useEffect(() => {
     setProyects(initialProyects);
   }, []);
 
@@ -55,24 +60,31 @@ export default function Proyects() {
       <div className="max-w-[1200px] m-auto w-[90%]">
         <div className="py-20">
           <div className="flex flex-col items-center gap-8">
-            <RevealWrapper>
+            <div data-aos="fade-down">
               <h2 className="font-black text-gray-600 uppercase text-32 dark:text-white">
                 Mis <span className="text-main">proyectos</span>
               </h2>
-            </RevealWrapper>
+            </div>
             <div className="flex flex-wrap justify-start gap-2 md:justify-center">
-              {tags.map((tag) => (
-                <Button
+              {tags.map((tag, index) => (
+                <div
+                  data-aos="fade-up"
+                  data-aos-duration={500 + 200 * index}
                   key={tag.id}
-                  onClick={() => handleClickTag(tag.id)}
-                  text={tag.name}
-                  variant={tag.isActive ? "filled" : "outline"}
-                />
+                >
+                  <Button
+                    onClick={() => handleClickTag(tag.id)}
+                    text={tag.name}
+                    variant={tag.isActive ? "filled" : "outline"}
+                  />
+                </div>
               ))}
             </div>
             <div className="grid gap-8 md:grid-cols-2">
               {proyects.map((proyect) => (
-                <ProyectCard2 key={proyect.id} proyect={proyect} />
+                <div data-aos="fade-up" key={proyect.id}>
+                  <ProyectCard2 proyect={proyect} />
+                </div>
               ))}
             </div>
           </div>

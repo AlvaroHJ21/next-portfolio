@@ -1,16 +1,25 @@
+import { useEffect } from 'react';
+
 import { AiOutlineArrowRight } from "react-icons/ai";
-import { RevealWrapper } from "next-reveal";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import Button from "@/components/ui/Button";
 import Image from "next/image";
 
+
 export default function About() {
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <section id="about-us" className="bg-gray-50 dark:bg-background-light">
       <div className="max-[1200px] w-[90%] m-auto">
         <div className="flex flex-col-reverse items-center justify-center min-h-screen gap-8 py-20 md:flex-row md:justify-center">
           {/* Imagen */}
-          <RevealWrapper origin="bottom" reset className="">
+          <div data-aos="fade-down" className="">
             <div className="max-w-sm m-auto">
               <Image
                 className="object-cover w-full h-auto transition-transform duration-300 cursor-pointer hover:scale-110"
@@ -20,10 +29,10 @@ export default function About() {
                 height={500}
               />
             </div>
-          </RevealWrapper>
+          </div>
 
           {/* Texto y cta */}
-          <RevealWrapper origin="top" reset className="">
+          <div data-aos="fade-up" className="">
             <div className="flex flex-col items-center gap-4 md:items-start md:flex-1">
               <h2 className="font-black text-gray-600 uppercase text-32 dark:text-white">
                 Sobre <span className="text-main">mí</span>
@@ -46,7 +55,7 @@ export default function About() {
                 />
               {/* </div> */}
             </div>
-          </RevealWrapper>
+          </div>
         </div>
       </div>
     </section>
