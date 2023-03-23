@@ -13,7 +13,7 @@ export default function ProyectDetails({ proyect }: Props) {
 
         <div className="fixed top-0 w-full">
           <Image
-            className="w-full h-[580px] object-cover"
+            className="w-full h-[50vh] object-cover"
             src={proyect.image!}
             alt={`Imagen del proyecto ${proyect.title}`}
             width={800}
