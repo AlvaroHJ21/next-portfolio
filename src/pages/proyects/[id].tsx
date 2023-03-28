@@ -32,18 +32,6 @@ export default function ProyectDetails({ proyect }: Props) {
               <h3 className="mb-8 text-gray-400">{proyect.subtitle}</h3>
 
               <p className="leading-8">{proyect.description}</p>
-              <p className="leading-8">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Molestiae harum consectetur consequatur, amet deserunt magni
-                iste ipsum accusantium corrupti? Quis labore nemo nostrum vero
-                dicta animi ipsum impedit obcaecati consectetur.
-              </p>
-              <p className="leading-8">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi
-                eum necessitatibus molestiae ipsa, consequuntur id sint,
-                expedita dicta, consectetur quas a perspiciatis alias animi
-                maxime excepturi at perferendis velit ea.
-              </p>
             </div>
             {/* Imagen */}
             <Image

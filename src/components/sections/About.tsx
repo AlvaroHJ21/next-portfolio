@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 import { AiOutlineArrowRight } from "react-icons/ai";
 import AOS from "aos";
@@ -6,10 +6,9 @@ import "aos/dist/aos.css";
 
 import Button from "@/components/ui/Button";
 import Image from "next/image";
-
+import LinkButton from "../ui/LinkButton";
 
 export default function About() {
-
   useEffect(() => {
     AOS.init();
   }, []);
@@ -49,10 +48,11 @@ export default function About() {
                 conmigo para hablar sobre tus proyectos!
               </p>
               {/* <div className="text-white"> */}
-                <Button
-                  text="Leer más"
-                  suffixIcon={<AiOutlineArrowRight size={24} />}
-                />
+              <LinkButton
+                href="/#contact"
+                text="Saber más"
+                suffixIcon={<AiOutlineArrowRight size={24} />}
+              />
               {/* </div> */}
             </div>
           </div>
