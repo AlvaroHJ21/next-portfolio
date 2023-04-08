@@ -32,8 +32,8 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="w-[90%] m-auto">
-      <div className="flex flex-col justify-center py-20">
+    <section id="contact" className="bg-gray-50 dark:bg-background-light">
+      <div className="max-w-[1200px] w-[90%] m-auto flex flex-col justify-center py-20">
         <div data-aos="fade-down">
           <h2 className="mb-8 font-black text-center uppercase text-main text-32 dark:text-white">
             Contáctame

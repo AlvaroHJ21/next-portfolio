@@ -10,6 +10,7 @@ import {
   Category,
 } from "../../../data/proyects";
 import ProyectCard2 from "./ProyectCard2";
+import ProyectCard3 from './ProyectCard3';
 
 const initialCategories: Category[] = [
   {
@@ -96,7 +97,7 @@ export default function Proyects() {
             <div className="grid gap-8 md:grid-cols-2">
               {filteredProyects.map((proyect) => (
                 <div data-aos="fade-up" key={proyect.id}>
-                  <ProyectCard2 proyect={proyect} />
+                  <ProyectCard3 proyect={proyect} />
                 </div>
               ))}
             </div>

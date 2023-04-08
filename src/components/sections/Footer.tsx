@@ -10,7 +10,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center gap-4 py-16 bg-gray-50 dark:bg-background-light">
+    <div className="flex flex-col items-center gap-4 py-16">
       <div data-aos="fade-up">
         <ButtonIcons />
       </div>

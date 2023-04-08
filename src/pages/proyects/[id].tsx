@@ -47,7 +47,7 @@ export default function ProyectDetails({ proyect }: Props) {
           <div className="md:flex-1">
             <h3 className="mb-8 font-bold">Tecnologías</h3>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              {proyect.tecnolgoies?.map((tecnology, index) => (
+              {proyect.tecnologies?.map((tecnology, index) => (
                 <div key={index}>
                   <Image
                     src={tecnology.img}

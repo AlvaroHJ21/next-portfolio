@@ -37,7 +37,7 @@ export interface Proyect {
   image?: string;
   image2?: string;
   categories: Category[];
-  tecnolgoies?: Tecnology[];
+  tecnologies?: Tecnology[];
 }
 
 export const categories: Category[] = [
@@ -71,7 +71,7 @@ export const proyects: Proyect[] = [
     image: "/img/cover-audifonos.webp",
     image2: "/img/cover-audifonos.png",
     categories: [{ name: "Landing Page" }],
-    tecnolgoies: [
+    tecnologies: [
       {
         name: "HTML",
         img: HTMLLogo,
@@ -91,7 +91,7 @@ export const proyects: Proyect[] = [
     image: "/img/cover-book-ecommerce.webp",
     image2: "/img/cover-book-ecommerce.png",
     categories: [{ name: "Aplicaciones Web" }, { name: "Ecommerce" }],
-    tecnolgoies: [
+    tecnologies: [
       {
         name: "React",
         img: reactLogo,
@@ -123,7 +123,7 @@ export const proyects: Proyect[] = [
     image: "/img/cover-bosque.webp",
     image2: "/img/cover-bosque.png",
     categories: [{ name: "Landing Page" }],
-    tecnolgoies: [
+    tecnologies: [
       {
         name: "HTML",
         img: HTMLLogo,
@@ -143,7 +143,7 @@ export const proyects: Proyect[] = [
     image: "/img/cover-cafeteria.webp",
     image2: "/img/cover-cafeteria.png",
     categories: [{ name: "Páginas Web" }],
-    tecnolgoies: [
+    tecnologies: [
       {
         name: "HTML",
         img: HTMLLogo,
@@ -167,7 +167,7 @@ export const proyects: Proyect[] = [
     image: "/img/cover-muebles.webp",
     image2: "/img/cover-muebles.png",
     categories: [{ name: "Landing Page" }, { name: "Páginas Web" }],
-    tecnolgoies: [
+    tecnologies: [
       {
         name: "HTML",
         img: HTMLLogo,
@@ -187,7 +187,7 @@ export const proyects: Proyect[] = [
     image: "/img/cover-pokemon.webp",
     image2: "/img/cover-pokemon.png",
     categories: [{ name: "Aplicaciones Web" }],
-    tecnolgoies: [
+    tecnologies: [
       {
         name: "NextJS",
         img: nextjsLogo,
@@ -207,7 +207,7 @@ export const proyects: Proyect[] = [
     image: "/img/cover-pokemon-2.webp",
     image2: "/img/cover-pokemon-2.png",
     categories: [{ name: "Aplicaciones Web" }],
-    tecnolgoies: [
+    tecnologies: [
       {
         name: "Vue",
         img: vueLogo,
@@ -223,7 +223,7 @@ export const proyects: Proyect[] = [
     image: "/img/cover-wallet.webp",
     image2: "/img/cover-wallet.png",
     categories: [{ name: "Landing Page" }],
-    tecnolgoies: [
+    tecnologies: [
       {
         name: "HTML",
         img: HTMLLogo,

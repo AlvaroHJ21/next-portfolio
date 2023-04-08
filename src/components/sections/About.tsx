@@ -15,7 +15,7 @@ export default function About() {
 
   return (
     <section id="about-us" className="bg-gray-50 dark:bg-background-light">
-      <div className="max-[1200px] w-[90%] m-auto">
+      <div className="max-w-[1200px] w-[90%] m-auto">
         <div className="flex flex-col-reverse items-center justify-center min-h-screen gap-8 py-20 md:flex-row md:justify-center">
           {/* Imagen */}
           <div data-aos="fade-down" className="">

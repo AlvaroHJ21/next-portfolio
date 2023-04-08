@@ -2,7 +2,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import Section from "../layouts/Section";
-import { useEffect } from 'react';
+import { useEffect } from "react";
+import Carousel from "../ui/carousel/Carousel";
 
 const skills = [
   {
@@ -17,19 +18,35 @@ const skills = [
         rating: 5,
       },
       {
-        name: "Javascript/EMC6",
+        name: "Javascript/ES6",
         rating: 5,
       },
       {
-        name: "Sass",
+        name: "SASS",
         rating: 5,
       },
       {
-        name: "Tailwind 3.x",
+        name: "React",
         rating: 5,
       },
       {
-        name: "PHP 8.1",
+        name: "TailwindCSS",
+        rating: 5,
+      },
+      {
+        name: "Bootstrap",
+        rating: 3,
+      },
+      {
+        name: "MaterialUI",
+        rating: 4,
+      },
+      {
+        name: "NextJS",
+        rating: 4,
+      },
+      {
+        name: "Vue",
         rating: 3,
       },
       {
@@ -57,16 +74,16 @@ const skills = [
         rating: 4,
       },
       {
-        name: "JSON",
-        rating: 5,
-      },
-      {
-        name: "GIT",
+        name: "Firebase",
         rating: 4,
       },
       {
-        name: "Docker",
-        rating: 3,
+        name: "Wordpress",
+        rating: 2,
+      },
+      {
+        name: "Dart/Flutter",
+        rating: 4,
       },
     ],
   },
@@ -75,11 +92,11 @@ const skills = [
     skills: [
       {
         name: "Español",
-        rating: 5,
+        rating: 6,
       },
       {
         name: "Inglés",
-        rating: 3,
+        rating: 2,
       },
     ],
   },
@@ -87,12 +104,20 @@ const skills = [
     category: "Herramientas/Otros",
     skills: [
       {
-        name: "Gihub",
+        name: "Git/Gihub",
         rating: 4,
       },
       {
+        name: "Docker",
+        rating: 3,
+      },
+      {
         name: "Figma",
-        rating: 5,
+        rating: 6,
+      },
+      {
+        name: "UX/UI",
+        rating: 4,
       },
       {
         name: "Jira/Atlassian",
@@ -102,60 +127,63 @@ const skills = [
         name: "Scrumm/Agile",
         rating: 5,
       },
-      {
-        name: "Postman/Insomnia",
-        rating: 5,
-      },
     ],
   },
 ];
 
 export default function Skills() {
-
   useEffect(() => {
     AOS.init();
   }, []);
 
   return (
-    <Section id="skills">
-      <div className="flex flex-col items-center justify-center gap-8 py-20 md:justify-start item-center">
-        <div data-aos="fade-down">
-          <h2 className="font-black text-gray-600 uppercase text-32 dark:text-white">
-            Mis <span className="text-main">habilidades</span>
-          </h2>
-        </div>
+    <>
+      <Section id="skills">
+        <div className="flex flex-col items-center justify-center gap-8 py-20 md:justify-start item-center">
+          <div data-aos="fade-down">
+            <h2 className="font-black text-gray-600 uppercase text-32 dark:text-white">
+              Mis <span className="text-main">habilidades</span>
+            </h2>
+          </div>
 
-        <div className="flex flex-col w-full gap-8 md:grid md:grid-cols-2 md:grid-rows-2 md:grid-flow-col">
-          {skills.map((skill, index) => (
-            <div key={index} className="w-full md:first:row-span-2">
-              <h3 className="mb-4 font-black text-center text-gray-600 text-20 dark:text-white">
-                {skill.category}
-              </h3>
-              <div className="flex flex-col gap-2">
-                {skill.skills.map((skill, index) => (
-                  <div data-aos="fade-up" data-aos-offset="80" className="flex justify-between" key={index}>
-                    <p className="text-black dark:text-white">{skill.name}</p>
-                    <div className="flex gap-2">
-                      {[...Array(skill.rating)].map((i, index) => (
-                        <div
-                          key={index}
-                          className="w-4 h-4 border-2 rounded-full bg-main border-main"
-                        ></div>
-                      ))}
-                      {[...Array(5 - skill.rating)].map((i, index) => (
-                        <div
-                          key={index}
-                          className="w-4 h-4 bg-transparent border-2 rounded-full border-main"
-                        ></div>
-                      ))}
+          <div className="flex flex-col w-full gap-8 md:grid md:grid-cols-2 md:grid-rows-2 md:grid-flow-col">
+            {skills.map((skill, index) => (
+              <div key={index} className="w-full md:first:row-span-2">
+                <h3 className="mb-4 font-black text-center text-gray-600 text-20 dark:text-white">
+                  {skill.category}
+                </h3>
+                <div className="flex flex-col gap-2">
+                  {skill.skills.map((skill, index) => (
+                    <div
+                      data-aos="fade-up"
+                      data-aos-offset="80"
+                      className="flex justify-between"
+                      key={index}
+                    >
+                      <p className="text-black dark:text-white">{skill.name}</p>
+                      <div className="flex gap-2">
+                        {[...Array(skill.rating)].map((i, index) => (
+                          <div
+                            key={index}
+                            className="w-4 h-4 border-2 rounded-full bg-main border-main"
+                          ></div>
+                        ))}
+                        {[...Array(6 - skill.rating)].map((i, index) => (
+                          <div
+                            key={index}
+                            className="w-4 h-4 bg-transparent border-2 rounded-full border-main"
+                          ></div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </Section>
+      </Section>
+      <Carousel />
+    </>
   );
 }

@@ -1,9 +1,10 @@
 import { Layout } from "@/components/layouts";
 import {
-  AboutMe,
+  About,
   Contact,
   Footer,
-  Home,
+  Formation,
+  Hero,
   Proyects,
   Skills,
 } from "@/components/sections";
@@ -11,10 +12,11 @@ import {
 export default function Index() {
   return (
     <Layout title="AlvaroHJ">
-      <Home />
-      <AboutMe />
+      <Hero />
+      <About />
       <Skills />
       <Proyects />
+      <Formation/>
       <Contact />
       <Footer />
     </Layout>
