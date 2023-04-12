@@ -4,61 +4,58 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import Button from "../../ui/Button";
-import {
-  proyects as initialProyects,
-  Proyect,
-  Category,
-} from "../../../data/proyects";
-import ProyectCard2 from "./ProyectCard2";
-import ProyectCard3 from './ProyectCard3';
 
-const initialCategories: Category[] = [
-  {
-    name: "Todos",
-  },
-  {
-    name: "Landing Page",
-  },
-  {
-    name: "Páginas Web",
-  },
-  {
-    name: "Aplicaciones Web",
-  },
-  {
-    name: "Ecommerce",
-  },
-  {
-    name: "Aplicaciones Móviles",
-  },
-];
+import ProyectCard3 from "./ProyectCard3";
+import { Project } from "@/interfaces/Project";
+import { Category } from "@/interfaces/Category";
 
-export default function Proyects() {
-  const [categories, setCategories] = useState(initialCategories);
+// const initialCategories: Category[] = [
+//   {
+//     name: "Todos",
+//   },
+//   {
+//     name: "Landing Page",
+//   },
+//   {
+//     name: "Páginas Web",
+//   },
+//   {
+//     name: "Aplicaciones Web",
+//   },
+//   {
+//     name: "Ecommerce",
+//   },
+//   {
+//     name: "Aplicaciones Móviles",
+//   },
+// ];
+
+interface Props {
+  projects: Project[];
+  categories: Category[];
+}
+
+export default function Proyects({ projects, categories }: Props) {
+
   const [selectedCategory, setSelectedCategory] = useState<Category>({
+    id: 0,
     name: "Todos",
   });
 
-  const [proyects, setProyects] = useState<Proyect[]>([]);
-
   const filteredProyects = useMemo(() => {
     if (selectedCategory.name === "Todos") {
-      return proyects;
+      return projects;
     } else {
-      return proyects.filter((proyect) =>
+      return projects.filter((proyect) =>
         proyect.categories.find(
           (category) => category.name === selectedCategory.name
         )
       );
     }
-  }, [proyects, selectedCategory]);
+  }, [projects, selectedCategory]);
 
   useEffect(() => {
     AOS.init();
-  }, []);
-
-  useEffect(() => {
-    setProyects(initialProyects);
   }, []);
 
   function handleClickTag(category: Category) {
@@ -95,9 +92,9 @@ export default function Proyects() {
               ))}
             </div>
             <div className="grid gap-8 md:grid-cols-2">
-              {filteredProyects.map((proyect) => (
-                <div data-aos="fade-up" key={proyect.id}>
-                  <ProyectCard3 proyect={proyect} />
+              {filteredProyects.map((project) => (
+                <div data-aos="fade-up" key={project.id}>
+                  <ProyectCard3 project={project} />
                 </div>
               ))}
             </div>
