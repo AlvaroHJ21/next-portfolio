@@ -5,20 +5,22 @@ import { GetStaticPaths } from "next";
 import projectProvider from "@/providers/projectProvider";
 import { Project } from "@/interfaces/Project";
 import { Layout } from "@/components/layouts";
+import { MdClose } from "react-icons/md";
+import { useState } from "react";
 
 interface Props {
   project: Project;
 }
 
 export default function ProyectDetails({ project }: Props) {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <Layout title={`${project.name} - AlvaroHJ`}>
       <div className="bg-gray-50 dark:bg-background-light">
-
         <div className="fixed top-0 w-full">
           <Image
             className="w-full h-[50vh] object-cover"
-            src={project.cover.medium!}
+            src={project.cover.original!}
             alt={`Imagen del proyecto ${project.name}`}
             width={800}
             height={480}
@@ -33,7 +35,9 @@ export default function ProyectDetails({ project }: Props) {
             {/* Textos */}
             <div className="">
               <h1 className="font-bold text-32">{project.name}</h1>
-              <h3 className="mb-8 text-gray-400">{project.categories[0].name}</h3>
+              <h3 className="mb-8 text-gray-400">
+                {project.categories[0].name}
+              </h3>
 
               <p className="leading-8">{project.description}</p>
             </div>
@@ -44,6 +48,8 @@ export default function ProyectDetails({ project }: Props) {
               width={800}
               height={480}
               sizes="100vw"
+              className="cursor-pointer"
+              onClick={() => setIsOpen(true)}
             />
           </div>
 
@@ -66,12 +72,27 @@ export default function ProyectDetails({ project }: Props) {
           </div>
         </div>
       </div>
+
+      <div
+        className={`${
+          isOpen ? "block" : "hidden"
+        } fixed top-0 z-50 w-full h-screen bg-black bg-opacity-60`}
+      >
+        <div className="relative flex items-center justify-center w-full h-full">
+          <div className="absolute flex justify-center pt-2 top-2 right-2 left-2">
+            <div className="p-2 border-2 rounded-full cursor-pointer " onClick={() => setIsOpen(false)}>
+            <MdClose size={16} />
+          </div>
+          </div>
+          
+          <img className="object-cover m-auto shadow-lg h-5/6 " src={project.cover.original} alt="" />
+        </div>
+      </div>
     </Layout>
   );
 }
 
 // You should use getStaticPaths if you’re statically pre-rendering pages that use dynamic routes
-
 
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
   const projects = await projectProvider.getProjects();
@@ -92,9 +113,7 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
 //- The data can be publicly cached (not user-specific).
 //- The page must be pre-rendered (for SEO) and be very fast — getStaticProps generates HTML and JSON files, both of which can be cached by a CDN for performance.
 
-
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-
   const projects = await projectProvider.getProjects();
 
   const { id } = params as { id: string };
