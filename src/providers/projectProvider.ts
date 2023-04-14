@@ -15,6 +15,7 @@ export default {
         id: project.id,
         name: project.attributes.name,
         description: project.attributes.description,
+        url: project.attributes.url,
         categories: project.attributes.categories.data.map(
           (category) =>
             ({

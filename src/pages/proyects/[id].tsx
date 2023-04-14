@@ -6,6 +6,7 @@ import projectProvider from "@/providers/projectProvider";
 import { Project } from "@/interfaces/Project";
 import { Layout } from "@/components/layouts";
 import { MdClose } from "react-icons/md";
+import { HiOutlineExternalLink } from "react-icons/hi";
 import { useState } from "react";
 
 interface Props {
@@ -34,10 +35,21 @@ export default function ProyectDetails({ project }: Props) {
           <div className="space-y-8 md:flex-[2]">
             {/* Textos */}
             <div className="">
-              <h1 className="font-bold text-32">{project.name}</h1>
-              <h3 className="mb-8 text-gray-400">
-                {project.categories[0].name}
-              </h3>
+              <div className="flex justify-between">
+                <div>
+                  <h1 className="font-bold text-32">{project.name}</h1>
+                  <h3 className="mb-8 text-gray-400">
+                    {project.categories[0].name}
+                  </h3>
+                </div>
+                <a
+                  href={project.url}
+                  target="_blank"
+                  className="flex items-center justify-center w-10 h-10 text-white bg-black rounded-full bg-opacity-20"
+                >
+                  <HiOutlineExternalLink size={24} />
+                </a>
+              </div>
 
               <p className="leading-8">{project.description}</p>
             </div>
@@ -73,6 +85,7 @@ export default function ProyectDetails({ project }: Props) {
         </div>
       </div>
 
+      {/* Modal */}
       <div
         className={`${
           isOpen ? "block" : "hidden"
@@ -80,12 +93,19 @@ export default function ProyectDetails({ project }: Props) {
       >
         <div className="relative flex items-center justify-center w-full h-full">
           <div className="absolute flex justify-center pt-2 top-2 right-2 left-2">
-            <div className="p-2 border-2 rounded-full cursor-pointer " onClick={() => setIsOpen(false)}>
-            <MdClose size={16} />
+            <div
+              className="p-2 text-white border-2 rounded-full cursor-pointer"
+              onClick={() => setIsOpen(false)}
+            >
+              <MdClose size={16} />
+            </div>
           </div>
-          </div>
-          
-          <img className="object-cover m-auto shadow-lg h-5/6 " src={project.cover.original} alt="" />
+
+          <img
+            className="object-cover m-auto shadow-lg h-5/6 "
+            src={project.cover.original}
+            alt=""
+          />
         </div>
       </div>
     </Layout>

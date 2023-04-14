@@ -9,4 +9,5 @@ export interface Project {
   categories: Category[];
   tecnologies: Tecnology[];
   cover: Image;
+  url?: string;
 }
