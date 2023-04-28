@@ -11,11 +11,11 @@ const skills = [
     skills: [
       {
         name: "HTML/5",
-        rating: 5,
+        rating: 6,
       },
       {
         name: "CSS/3",
-        rating: 5,
+        rating: 6,
       },
       {
         name: "Javascript/ES6",
@@ -27,27 +27,31 @@ const skills = [
       },
       {
         name: "React",
-        rating: 5,
+        rating: 6,
       },
       {
         name: "TailwindCSS",
         rating: 5,
       },
       {
-        name: "Bootstrap",
-        rating: 3,
-      },
-      {
         name: "MaterialUI",
-        rating: 4,
+        rating: 5,
       },
       {
         name: "NextJS",
         rating: 4,
       },
       {
-        name: "Vue",
+        name: "Bootstrap",
         rating: 3,
+      },
+      {
+        name: "Vue",
+        rating: 4,
+      },
+      {
+        name: "Angular",
+        rating: 4,
       },
       {
         name: "NodeJS/Express",
@@ -60,6 +64,10 @@ const skills = [
       {
         name: "Typescript",
         rating: 5,
+      },
+      {
+        name: "Laravel 9",
+        rating: 4,
       },
       {
         name: "MySQL",
@@ -79,7 +87,7 @@ const skills = [
       },
       {
         name: "Wordpress",
-        rating: 2,
+        rating: 3,
       },
       {
         name: "Dart/Flutter",
@@ -105,7 +113,7 @@ const skills = [
     skills: [
       {
         name: "Git/Gihub",
-        rating: 4,
+        rating: 5,
       },
       {
         name: "Docker",
